@@ -1,11 +1,367 @@
----
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiddleBops - 你的音乐创作乐园</title>
+    <meta name="description" content="用 FiddleBops 创建你独一无二的音乐！这是一个受 Incredibox 启发的粉丝自制项目，允许你混合搭配各种声音，创作个性化音乐。在 FiddleBops 中，探索你的音乐天赋，分享你的独特音乐。">
+    <meta name="keywords" content="FiddleBops, 音乐创作, 音乐游戏, Incredibox, 节奏口技, 音乐混音器, 粉丝项目, 音频创作, 音乐乐园, 节奏游戏, 创意游戏">
+    <meta name="author" content="silkycell">
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
----
+  navToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
+  });
+    const playButton = document.querySelector('.overlay-button');
+    const iframeContainer = document.querySelector('.game-image-container');
+    let iframeLoaded = false;
+     playButton.addEventListener('click', () => {
+        if (!iframeLoaded) {
+           const iframe = document.createElement('iframe');
+              iframe.src = "https://silkycell.github.io/FiddleBops/";
+              iframe.width = "100%";
+              iframe.height = "600px";
+              iframe.loading = "lazy";
+              iframe.fetchpriority = "high";
+              iframe.title = "FiddleBops Music Creation Game";
+            iframeContainer.innerHTML = '';
+             iframeContainer.appendChild(iframe);
+          iframeLoaded = true;
+          playButton.style.display = 'none';
+        }
 
-<Layout>
-	<Welcome />
-</Layout>
+    });
+});
+</script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Fiddle<span class="light">Bops</span></h1>
+            </div>
+             <button class="nav-toggle" aria-label="切换导航">☰</button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/">首页</a></li>
+                    <li><a href="#play">游戏</a></li>
+                     <li><a href="#about">关于</a></li>
+                     <li><a href="#faq">疑问</a></li>
+                     <li><a href="#comments">评价</a></li>
+                </ul>
+            </nav>
+      <select style="float:right;">
+        <option value="">Language</option>
+        <option data-url="/">English</option>
+        <option data-url="/zh">简体中文</option>  
+        <option data-url="/es">Español</option>
+        <option data-url="/fr">Français</option>
+        <option data-url="/de">Deutsch</option>
+        <option data-url="/ja">日本語</option>
+        <option data-url="/ko">한국어</option>
+        </select>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="game-card">
+                    <div class="game-info" id="paly">
+                        <h2>欢迎来到 FiddleBops！</h2>
+                        <p>开始你的音乐创作之旅！FiddleBops 是一个受 Incredibox 启发的粉丝自制项目。在这里，您可以自由混搭各种声音，创造属于您自己的独特音乐。</p>
+                    </div>
+                   <div class="game-image-container">
+
+                        <button class="overlay-button">开始游戏</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="games">
+            <div class="container">
+              <h2>探索 FiddleBops 中的不同声音</h2>
+                 <div class="game-grid">
+                   <div class="game">
+                        <div class="game-logo">
+                            <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fbeat1.png&w=1920&q=75" alt="Beat 1">
+                         </div>
+                        <p>Beat 1</p>
+                        <button>播放</button>
+                    </div>
+                    <div class="game">
+                      <div class="game-logo">
+                         <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fbeat3.png&w=1920&q=75" alt="Beat 3">
+                      </div>
+                        <p>Beat 3</p>
+                        <button>播放</button>
+                    </div>
+                     <div class="game">
+                       <div class="game-logo">
+                           <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fbeat5.png&w=1920&q=75" alt="Beat 5">
+                      </div>
+                        <p>Beat 5</p>
+                        <button>播放</button>
+                    </div>
+                    <div class="game">
+                       <div class="game-logo">
+                         <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Feffect3.png&w=1920&q=75" alt="Effect 3">
+                       </div>
+                        <p>Effect 3</p>
+                        <button>播放</button>
+                    </div>
+                     <div class="game">
+                        <div class="game-logo">
+                          <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Feffect4.png&w=1920&q=75" alt="Effect 4">
+                        </div>
+                        <p>Effect 4</p>
+                        <button>播放</button>
+                    </div>
+                    <div class="game">
+                       <div class="game-logo">
+                         <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Feffect5.png&w=1920&q=75" alt="Effect 5">
+                       </div>
+                        <p>Effect 5</p>
+                        <button>播放</button>
+                    </div>
+                    <div class="game">
+                       <div class="game-logo">
+                         <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fvoice1.png&w=1920&q=75" alt="Voice 2">
+                       </div>
+                        <p>Voice 2</p>
+                        <button>播放</button>
+                    </div>
+                    <div class="game">
+                        <div class="game-logo">
+                             <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fvoice3.png&w=1920&q=75" alt="Voice 3">
+                         </div>
+                        <p>Voice 3</p>
+                        <button>播放</button>
+                    </div>
+                     <div class="game">
+                       <div class="game-logo">
+                           <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fvoice5.png&w=1920&q=75" alt="Voice 5">
+                       </div>
+                        <p>Voice 5</p>
+                        <button>播放</button>
+                    </div>
+                    <div class="game">
+                         <div class="game-logo">
+                            <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fbonus1.png&w=1920&q=75" alt="Bonus 1">
+                         </div>
+                        <p>Bonus 1</p>
+                        <button>播放</button>
+                   </div>
+                 </div>
+            </div>
+
+        </section>
+          <section class="about" id="about">
+            <div class="container">
+              <h2>关于 FiddleBops游戏的项目介绍</h2>
+              <div class="about-content">
+                    <h3>游戏简介</h3>
+                     <p>《FiddleBops》是一款由《Incredibox》系列启发的音乐创作游戏，结合了互动性与创造性，玩家可以通过游戏探索音乐创作的乐趣。游戏灵感来源于威尔士爵士乐队 FiddleBop 的音乐风格，以充满活力的旋律和节奏为核心。</p>
+                    <hr>
+
+                    <h3>游戏特点</h3>
+                    <h4>独特的角色系统</h4>
+                      <p>游戏提供了一系列具有独特个性和音效的角色，玩家可以根据自己的创意组合这些角色来创作音乐。</p>
+                     <h4>丰富的音乐创作功能</h4>
+                        <ul>
+                            <li>玩家可以通过拖拽角色和音效图标来构建音乐作品。</li>
+                            <li>提供丰富的音效库，包括爵士、流行和电子音乐等多种风格。</li>
+                            <li>支持调整音高、叠加音效，以及解锁特殊动画。</li>
+                        </ul>
+                   <h4>互动性与社区功能</h4>
+                        <ul>
+                            <li>玩家可以保存并分享自己的音乐作品，与其他玩家交流。</li>
+                            <li>游戏提供社区活动和挑战，玩家可以参与其中，获取新角色和音效。</li>
+                        </ul>
+                     <h4>免费游玩与跨平台支持</h4>
+                        <p>游戏完全免费，支持在线游玩，无需下载。部分功能（如离线模式）可在无网络环境下使用。</p>
+
+                    <h4>适合所有年龄段</h4>
+                        <p>游戏设计简单易上手，适合初学者和专业音乐爱好者。</p>
+                     <hr>
+
+                    <h3>游戏玩法</h3>
+                      <h4>选择角色与音效</h4>
+                        <p>玩家可以从多个角色中选择，并为角色分配不同的音效。</p>
+                     <h4>创作与实验</h4>
+                         <p>通过拖拽和组合角色及音效，玩家可以创作出独特的音乐作品。</p>
+                     <h4>解锁新内容</h4>
+                          <p>随着游戏进度，玩家可以解锁新的角色、音效和乐器，进一步丰富创作。</p>
+                     <h4>社区互动</h4>
+                         <p>玩家可以将自己的作品分享到社区，与其他玩家交流创作心得。</p>
+                    <hr>
+                  <h3>游戏优势</h3>
+                      <ul>
+                        <li>提升创造力：通过音乐创作，玩家可以锻炼节奏感和音乐创作能力。</li>
+                        <li>社交互动：游戏提供了一个充满活力的社区，玩家可以与其他音乐爱好者交流。</li>
+                        <li>持续更新：游戏会定期添加新内容，保持玩家的新鲜感。</li>
+                   </ul>
+                    <hr>
+                  <h3>总结</h3>
+                    <p>《FiddleBops》是一款结合了音乐创作与互动体验的游戏，适合所有喜欢音乐的玩家。无论是简单的节奏挑战，还是复杂的音乐创作，它都能满足玩家的需求。</p>
+                 </div>
+            </div>
+        </section>
+
+          <section class="about" id="faq">
+            <div class="container">
+              <h2>关于 FiddleBops游戏的常见问题</h2>
+              <div class="about-content">
+                  <h3>什么是 FiddleBops 游戏</h3>
+                     <p>
+                       FiddleBops 游戏是由 Incredibox 粉丝制作的项目，灵感来源于 Incredibox。在这里，你可以体验声音混搭的乐趣，并通过直观的界面创作出独一无二的音乐作品。
+                    </p>
+                 </div>
+
+                 <div class="about-content">
+                   <h3>FiddleBops 游戏是否免费？</h3>
+                     <p>
+                       是的，FiddleBops 游戏完全免费，玩家可以在线游玩，无需下载。
+                     </p>
+                 </div>
+
+                  <div class="about-content">
+                   <h3>是否需要下载或安装？</h3>
+                     <p>
+                        不需要。游戏直接在浏览器中运行，支持桌面和移动设备
+                     </p>
+                  </div>
+
+                  <div class="about-content">
+                   <h3>FiddleBops 游戏如何开始创作音乐？</h3>
+                     <p>
+                        玩家可以通过拖拽角色到舞台上，将它们的独特声音组合成音乐作品。尝试不同的角色组合可以解锁隐藏的旋律和奖励内容
+                     </p>
+                  </div>
+
+                  <div class="about-content">
+                   <h3>游戏是否适合音乐爱好者？</h3>
+                     <p>
+                        绝对适合！《FiddleBops》为音乐爱好者提供了一个充满创意和乐趣的平台。
+                     </p>
+                  </div>
+
+                  <div class="about-content">
+                   <h3>游戏是否支持多人协作？</h3>
+                     <p>
+                        是的，玩家可以与其他玩家实时协作，共同创作音乐。
+                     </p>
+                  </div>
+            </div>
+        </section>
+
+
+    <section class="comments" id="comments">
+         <div class="container">
+            <h2>玩家对 FiddleBops 游戏的评价</h2>
+             <div class="comment">
+                 <p class="author">音乐爱好者 <span class="time">1个月前</span></p>
+                  <p>FiddleBops 是我制作节拍的首选！这里的音效都很棒，用起来超有趣。</p>
+                  <div class="actions">
+                    <a href="#">回复</a>
+                    <span>❤️ 赞 0</span>
+                    <span> 💔 踩 0</span>
+                  </div>
+           </div>
+              <div class="comment">
+                 <p class="author">节拍大师 <span class="time">2个月前</span></p>
+                  <p>FiddleBops 是我最喜欢的音乐创作工具，强烈推荐！</p>
+                  <div class="actions">
+                     <a href="#">回复</a>
+                    <span>❤️ 赞 3</span>
+                    <span> 💔 踩 1</span>
+                  </div>
+              </div>
+
+               <div class="comment">
+                  <p class="author">节奏专家 <span class="time">3个月前</span></p>
+                  <p>这里的混音工具很容易上手，而且做出来的效果很赞！</p>
+                  <div class="actions">
+                   <a href="#">回复</a>
+                    <span>❤️ 赞 4</span>
+                    <span> 💔 踩 0</span>
+                  </div>
+               </div>
+               <div class="comment">
+                 <p class="author">声音创作者 <span class="time">4个月前</span></p>
+                  <p>我爱用 FiddleBops 来实现我的音乐梦想。这绝对是我的专属音乐空间！</p>
+                  <div class="actions">
+                   <a href="#">回复</a>
+                    <span>❤️ 赞 46</span>
+                    <span> 💔 踩 7</span>
+                   </div>
+               </div>
+             <div class="comment">
+                  <p class="author">新手作曲家 <span class="time">5个月前</span></p>
+                  <p>我刚开始探索 FiddleBops，它已经成为我最喜欢的工具之一啦！</p>
+               </div>
+
+        </div>
+     </section>
+    </main>
+
+    <footer>
+      <div class="container">
+           <nav>
+               <ul>
+                  <li><a href="#about">关于我们</a></li>
+                  <li><a href="#">隐私政策</a></li>
+                  <li><a href="#">服务条款</a></li>
+                </ul>
+           </nav>
+           <p class="copyright">© 2025 FiddleBops. 版权所有。</p>
+      </div>
+    </footer>
+  <script>
+    function goToLink(event) {
+      const select = event.target;
+      const selectedOption = select.options[select.selectedIndex];
+      const url = selectedOption.getAttribute('data-url');
+      if (url) {
+      window.location.href = url;
+      }
+    }
+    
+    // 添加事件监听器
+    document.addEventListener('DOMContentLoaded', () => {
+      const select = document.querySelector('select');
+      if (select) {
+      select.addEventListener('change', goToLink);
+      
+      // 设置当前语言
+      const currentPath = window.location.pathname;
+      const options = Array.from(select.options);
+      const currentOption = options.find(option => 
+        option.getAttribute('data-url') === currentPath
+      );
+      
+      if (currentOption) {
+        currentOption.selected = true;
+      } else {
+        // 如果是根路径或找不到匹配的选项，选择英文（默认语言）
+        const defaultOption = options.find(option => 
+        option.getAttribute('data-url') === '/'
+        );
+        if (defaultOption) {
+        defaultOption.selected = true;
+        }
+      }
+      }
+    });
+    </script>
+</body>
+</html>
