@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FiddleBops - 無料オンラインFiddleBops Incrediboxゲーム</title>
+    <meta name="description" content="FiddleBopsであなただけの音楽を創りましょう！Incrediboxにインスパイアされたファン制作のプロジェクトで、様々なサウンドをミックスしてパーソナライズされた音楽を作成できます。FiddleBopsであなたの音楽的才能を探求し、ユニークな音楽を共有しましょう。">
+    <meta name="keywords" content="FiddleBops, 音楽制作, 音楽ゲーム, Incredibox, ビートボックス, 音楽ミキサー, ファンプロジェクト, オーディオ制作, 音楽の楽園, リズムゲーム, クリエイティブゲーム">
+    <meta name="author" content="silkycell">
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  navToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
+  });
+    const playButton = document.querySelector('.overlay-button');
+    const iframeContainer = document.querySelector('.game-image-container');
+    let iframeLoaded = false;
+     playButton.addEventListener('click', () => {
+        if (!iframeLoaded) {
+           const iframe = document.createElement('iframe');
+              iframe.src = "https://silkycell.github.io/FiddleBops/";
+              iframe.width = "100%";
+              iframe.height = "600px";
+              iframe.loading = "lazy";
+              iframe.fetchpriority = "high";
+              iframe.title = "FiddleBops Music Creation Game";
+            iframeContainer.innerHTML = '';
+             iframeContainer.appendChild(iframe);
+          iframeLoaded = true;
+          playButton.style.display = 'none';
+        }
+
+    });
+});
+</script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Fiddle<span class="light">Bops</span></h1>
+            </div>
+             <button class="nav-toggle" aria-label="ナビゲーションの切り替え">☰</button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/ja">ホーム</a></li>
+                    <li><a href="#play">プレイ</a></li>
+                     <li><a href="#about">概要</a></li>
+                     <li><a href="#faq">よくある質問</a></li>
+                     <li><a href="#comments">レビュー</a></li>
+                </ul>
+            </nav>
+      <select style="float:right;">
+        <option value="">言語</option>
+        <option data-url="/">English</option>
+        <option data-url="/zh">简体中文</option>  
+        <option data-url="/es">Español</option>
+        <option data-url="/fr">Français</option>
+        <option data-url="/de">Deutsch</option>
+        <option data-url="/ja">日本語</option>
+        <option data-url="/ko">한국어</option>
+        </select>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="game-card">
+                    <div class="game-info" id="paly">
+                        <h2>FiddleBopsへようこそ！</h2>
+                        <p>音楽制作の旅を始めましょう！FiddleBopsはIncrediboxにインスパイアされたファン制作のプロジェクトです。ここでは、様々なサウンドを自由にミックスして、あなただけのユニークな音楽を作り出すことができます。</p>
+                    </div>
+                   <div class="game-image-container">
+
+                        <button class="overlay-button">ゲームを開始</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="games">
+            <div class="container">
+              <h2>FiddleBopsの様々なサウンドを探求しましょう</h2>
+                 <div class="game-grid">
+                   <div class="game">
+                        <div class="game-logo">
+                            <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fbeat1.png&w=1920&q=75" alt="ビート1">
+                         </div>
+                        <p>ビート1</p>
+                        <button>再生</button>
+                    </div>
+                    <div class="game">
+                      <div class="game-logo">
+                         <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fbeat3.png&w=1920&q=75" alt="ビート3">
+                      </div>
+                        <p>ビート3</p>
+                        <button>再生</button>
+                    </div>
+                     <div class="game">
+                       <div class="game-logo">
+                           <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fbeat5.png&w=1920&q=75" alt="ビート5">
+                      </div>
+                        <p>ビート5</p>
+                        <button>再生</button>
+                    </div>
+                    <div class="game">
+                       <div class="game-logo">
+                         <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Feffect3.png&w=1920&q=75" alt="エフェクト3">
+                       </div>
+                        <p>エフェクト3</p>
+                        <button>再生</button>
+                    </div>
+                     <div class="game">
+                        <div class="game-logo">
+                          <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Feffect4.png&w=1920&q=75" alt="エフェクト4">
+                        </div>
+                        <p>エフェクト4</p>
+                        <button>再生</button>
+                    </div>
+                    <div class="game">
+                       <div class="game-logo">
+                         <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Feffect5.png&w=1920&q=75" alt="エフェクト5">
+                       </div>
+                        <p>エフェクト5</p>
+                        <button>再生</button>
+                    </div>
+                    <div class="game">
+                       <div class="game-logo">
+                         <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fvoice1.png&w=1920&q=75" alt="ボイス2">
+                       </div>
+                        <p>ボイス2</p>
+                        <button>再生</button>
+                    </div>
+                    <div class="game">
+                        <div class="game-logo">
+                             <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fvoice3.png&w=1920&q=75" alt="ボイス3">
+                         </div>
+                        <p>ボイス3</p>
+                        <button>再生</button>
+                    </div>
+                     <div class="game">
+                       <div class="game-logo">
+                           <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fvoice5.png&w=1920&q=75" alt="ボイス5">
+                       </div>
+                        <p>ボイス5</p>
+                        <button>再生</button>
+                    </div>
+                    <div class="game">
+                         <div class="game-logo">
+                            <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fbonus1.png&w=1920&q=75" alt="ボーナス1">
+                         </div>
+                        <p>ボーナス1</p>
+                        <button>再生</button>
+                   </div>
+                 </div>
+            </div>
+
+        </section>
+          <section class="about" id="about">
+            <div class="container">
+              <h2>FiddleBopsゲームのプロジェクト紹介</h2>
+              <div class="about-content">
+                    <h3>ゲーム概要</h3>
+                     <p>『FiddleBops』は『Incredibox』シリーズにインスパイアされた無料オンライン音楽制作ゲームで、インタラクティブ性と創造性を兼ね備え、プレイヤーはゲームを通じて音楽制作の楽しさを探求できます。このゲームは、ウェールズのジャズバンドFiddleBopの音楽スタイルからインスピレーションを得ており、活気に満ちたメロディーとリズムを核としています。</p>
+                    <hr>
+
+                    <h3>ゲームの特徴</h3>
+                    <h4>ユニークなキャラクターシステム</h4>
+                      <p>このゲームでは、ユニークな個性とサウンドエフェクトを持つ一連のキャラクターが提供され、プレイヤーは自分の創造性に基づいてこれらのキャラクターを組み合わせて音楽を作成できます。</p>
+                     <h4>豊富な音楽制作機能</h4>
+                        <ul>
+                            <li>プレイヤーは、キャラクターとサウンドエフェクトのアイコンをドラッグアンドドロップして音楽作品を構築できます。</li>
+                             <li>ジャズ、ポップ、エレクトロニックミュージックなど、さまざまなスタイルの豊富なサウンドライブラリを提供しています。</li>
+                           <li>ピッチの調整、サウンドエフェクトの重ね合わせ、特別なアニメーションのロック解除をサポートしています。</li>
+                        </ul>
+                   <h4>インタラクティブ性とコミュニティ機能</h4>
+                        <ul>
+                           <li>プレイヤーは自分の音楽作品を保存して共有し、他のプレイヤーと交流できます。</li>
+                           <li>ゲームは、プレイヤーが参加して新しいキャラクターやサウンドエフェクトを入手できるコミュニティイベントやチャレンジを提供します。</li>
+                        </ul>
+                     <h4>無料プレイとクロスプラットフォームサポート</h4>
+                        <p>ゲームは完全無料で、ダウンロードせずにオンラインでプレイできます。一部の機能（オフラインモードなど）は、ネットワーク環境なしで使用できます。</p>
+
+                    <h4>すべての年齢層に適しています</h4>
+                         <p>このゲームはシンプルで使いやすく設計されており、初心者からプロの音楽愛好家まで適しています。</p>
+                     <hr>
+
+                    <h3>ゲームプレイ</h3>
+                      <h4>キャラクターとサウンドエフェクトの選択</h4>
+                         <p>プレイヤーは複数のキャラクターから選択し、キャラクターに異なるサウンドエフェクトを割り当てることができます。</p>
+                     <h4>制作と実験</h4>
+                         <p>キャラクターとサウンドエフェクトをドラッグアンドドロップで組み合わせることで、プレイヤーはユニークな音楽作品を作成できます。</p>
+                    <h4>新しいコンテンツのロック解除</h4>
+                         <p>ゲームが進むにつれて、プレイヤーは新しいキャラクター、サウンドエフェクト、楽器をロック解除し、制作をさらに豊かにすることができます。</p>
+                     <h4>コミュニティインタラクション</h4>
+                        <p>プレイヤーは自分の作品をコミュニティに共有し、他のプレイヤーと制作のヒントを交換できます。</p>
+                    <hr>
+                  <h3>ゲームの利点</h3>
+                      <ul>
+                          <li>創造性の向上：音楽制作を通じて、プレイヤーはリズム感と音楽制作スキルを向上させることができます。</li>
+                          <li>ソーシャルインタラクション：このゲームは活気に満ちたコミュニティを提供し、プレイヤーは他の音楽愛好家と交流できます。</li>
+                           <li>継続的な更新：ゲームは定期的に新しいコンテンツを追加し、プレイヤーに新鮮な体験を提供します。</li>
+                   </ul>
+                    <hr>
+                  <h3>まとめ</h3>
+                   <p>『FiddleBops』は、音楽制作とインタラクティブな体験を組み合わせたゲームで、音楽好きのすべてのプレイヤーに適しています。シンプルなリズムチャレンジでも、複雑な音楽制作でも、プレイヤーのニーズを満たすことができます。</p>
+                 </div>
+            </div>
+        </section>
+
+          <section class="about" id="faq">
+            <div class="container">
+              <h2>FiddleBopsゲームに関するよくある質問</h2>
+              <div class="about-content">
+                  <h3>FiddleBopsゲームとは何ですか？</h3>
+                     <p>
+                      FiddleBopsゲームは、Incrediboxのファンによって制作されたプロジェクトで、Incrediboxにインスパイアされています。ここでは、サウンドのミキシングの楽しさを体験し、直感的なインターフェースを通じてユニークな音楽作品を作成できます。
+                    </p>
+                 </div>
+
+                 <div class="about-content">
+                   <h3>FiddleBopsゲームは無料ですか？</h3>
+                     <p>
+                       はい、FiddleBopsゲームは完全無料で、プレイヤーはダウンロードせずにオンラインでプレイできます。
+                     </p>
+                 </div>
+
+                  <div class="about-content">
+                   <h3>ダウンロードやインストールは必要ですか？</h3>
+                     <p>
+                       いいえ。ゲームはブラウザで直接実行され、デスクトップとモバイルデバイスの両方をサポートしています。
+                     </p>
+                  </div>
+
+                  <div class="about-content">
+                   <h3>FiddleBopsゲームでどのように音楽制作を開始しますか？</h3>
+                     <p>
+                        プレイヤーは、キャラクターをステージにドラッグすることで音楽作品の制作を開始し、それらのユニークなサウンドを組み合わせて音楽作品にします。異なるキャラクターの組み合わせを試すことで、隠されたメロディーやボーナスコンテンツをアンロックできます。
+                     </p>
+                  </div>
+
+                  <div class="about-content">
+                   <h3>このゲームは音楽愛好家にとって適していますか？</h3>
+                     <p>
+                        もちろんです！『FiddleBops』は、音楽愛好家にとって創造性と楽しさに満ちたプラットフォームを提供します。
+                     </p>
+                  </div>
+
+                  <div class="about-content">
+                   <h3>このゲームはマルチプレイヤーコラボレーションをサポートしていますか？</h3>
+                     <p>
+                        はい、プレイヤーは他のプレイヤーとリアルタイムでコラボレーションして、一緒に音楽を作成できます。
+                     </p>
+                  </div>
+            </div>
+        </section>
+
+
+    <section class="comments" id="comments">
+         <div class="container">
+            <h2>FiddleBopsゲームのプレイヤーレビュー</h2>
+             <div class="comment">
+                 <p class="author">音楽愛好家 <span class="time">1ヶ月前</span></p>
+                  <p>FiddleBopsは私がビートを作るのに最適です！ここのサウンドエフェクトは素晴らしく、使うのがとても楽しいです。</p>
+                  <div class="actions">
+                    <a href="#">返信</a>
+                    <span>❤️ いいね 0</span>
+                    <span>💔 わるいね 0</span>
+                  </div>
+           </div>
+              <div class="comment">
+                 <p class="author">ビートマスター <span class="time">2ヶ月前</span></p>
+                  <p>FiddleBopsは私のお気に入りの音楽制作ツールです。強くお勧めします！</p>
+                  <div class="actions">
+                     <a href="#">返信</a>
+                    <span>❤️ いいね 3</span>
+                    <span>💔 わるいね 1</span>
+                  </div>
+              </div>
+
+               <div class="comment">
+                  <p class="author">リズムエキスパート <span class="time">3ヶ月前</span></p>
+                  <p>ここのミキシングツールは非常に使いやすく、出来上がる効果も素晴らしいです！</p>
+                  <div class="actions">
+                   <a href="#">返信</a>
+                    <span>❤️ いいね 4</span>
+                    <span>💔 わるいね 0</span>
+                  </div>
+               </div>
+               <div class="comment">
+                 <p class="author">サウンドクリエイター <span class="time">4ヶ月前</span></p>
+                  <p>FiddleBopsを使って、私の音楽の夢を実現するのが大好きです。これは間違いなく私の専用の音楽空間です！</p>
+                  <div class="actions">
+                   <a href="#">返信</a>
+                    <span>❤️ いいね 46</span>
+                    <span>💔 わるいね 7</span>
+                   </div>
+               </div>
+             <div class="comment">
+                  <p class="author">新米作曲家 <span class="time">5ヶ月前</span></p>
+                  <p>FiddleBopsを探求し始めたばかりですが、すでに私のお気に入りのツールの1つになっています！</p>
+               </div>
+
+        </div>
+     </section>
+    </main>
+
+    <footer>
+      <div class="container">
+           <nav>
+               <ul>
+                  <li><a href="#about">私たちについて</a></li>
+                  <li><a href="#">プライバシーポリシー</a></li>
+                  <li><a href="#">利用規約</a></li>
+                </ul>
+           </nav>
+           <p class="copyright">© 2025 FiddleBops. All rights reserved.</p>
+      </div>
+    </footer>
+  <script>
+    function goToLink(event) {
+      const select = event.target;
+      const selectedOption = select.options[select.selectedIndex];
+      const url = selectedOption.getAttribute('data-url');
+      if (url) {
+      window.location.href = url;
+      }
+    }
+    
+    // イベントリスナーの追加
+    document.addEventListener('DOMContentLoaded', () => {
+      const select = document.querySelector('select');
+      if (select) {
+      select.addEventListener('change', goToLink);
+      
+      // 現在の言語を設定
+      const currentPath = window.location.pathname;
+      const options = Array.from(select.options);
+      const currentOption = options.find(option => 
+        option.getAttribute('data-url') === currentPath
+      );
+      
+      if (currentOption) {
+        currentOption.selected = true;
+      } else {
+        // ルートパスまたは一致するオプションが見つからない場合、英語（デフォルト言語）を選択
+        const defaultOption = options.find(option => 
+        option.getAttribute('data-url') === '/'
+        );
+        if (defaultOption) {
+        defaultOption.selected = true;
+        }
+      }
+      }
+    });
+    </script>
+</body>
+</html>
