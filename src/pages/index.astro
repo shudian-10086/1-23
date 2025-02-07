@@ -339,13 +339,11 @@
       }
     }
     
-    // 添加事件监听器
     document.addEventListener('DOMContentLoaded', () => {
       const select = document.querySelector('select');
       if (select) {
       select.addEventListener('change', goToLink);
       
-      // 设置当前语言
       const currentPath = window.location.pathname;
       const options = Array.from(select.options);
       const currentOption = options.find(option => 
@@ -355,7 +353,6 @@
       if (currentOption) {
         currentOption.selected = true;
       } else {
-        // 如果是根路径或找不到匹配的选项，选择英文（默认语言）
         const defaultOption = options.find(option => 
         option.getAttribute('data-url') === '/'
         );
