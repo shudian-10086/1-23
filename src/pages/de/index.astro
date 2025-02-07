@@ -320,7 +320,7 @@
                <ul>
                   <li><a href="#about">Über uns</a></li>
                   <li><a href="#">Datenschutz</a></li>
-                  <li><a href="#">Nutzungsbedingungen</a></li>
+                  <li><a href="/SiteMap.xml">SiteMap</a></li>
                 </ul>
            </nav>
            <p class="copyright">© 2025 FiddleBops. Alle Rechte vorbehalten.</p>
@@ -339,13 +339,9 @@
               t.addEventListener("change", d);
               const n = window.location.pathname;
               const c = Array.from(t.options);
-      
-              // 修复1: 忽略空值选项, 从1开始循环
               for (let i = 1; i < c.length; i++) {
                   const option = c[i];
                   const dataUrl = option.getAttribute("data-url");
-      
-                  // 修复2: 检查 dataUrl 是否存在，避免空指针错误
                   if (dataUrl && n.startsWith(dataUrl)) {
                       option.selected = true;
                       return; // 找到匹配项后立即返回

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://shiny-praline-664040.netlify.app/</loc>
+    <lastmod>2025-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shiny-praline-664040.netlify.app/zh</loc>
+    <lastmod>2025-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shiny-praline-664040.netlify.app/de</loc>
+    <lastmod>2025-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shiny-praline-664040.netlify.app/fr</loc>
+    <lastmod>2025-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shiny-praline-664040.netlify.app/es</loc>
+    <lastmod>2025-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shiny-praline-664040.netlify.app/ko</loc>
+    <lastmod>2025-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://shiny-praline-664040.netlify.app/ja</loc>
+    <lastmod>2025-02-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- 更多 url 元素 -->
+</urlset>
