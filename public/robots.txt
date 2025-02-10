@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shiny-praline-664040.netlify.app/SiteMap.xml
+Sitemap: https://shiny-praline-664040.netlify.app/sitemap.xml
