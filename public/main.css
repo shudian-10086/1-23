@@ -118,6 +118,7 @@ header nav ul li a:hover {
      background-position: center center;
      backdrop-filter: blur(10px);
      -webkit-backdrop-filter: blur(10px);
+     background-size:100%;
 }
 
 .game-card .game-image{
