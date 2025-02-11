@@ -30,45 +30,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="canonical" href="https://www.playfiddlebops.com/"/>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-  const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-
-  navToggle.addEventListener('click', function() {
-    navMenu.classList.toggle('active');
-  });
-    const playButton = document.querySelector('.overlay-button');
-    const iframeContainer = document.querySelector('.game-image-container');
-    let iframeLoaded = false;
-     playButton.addEventListener('click', () => {
-        if (!iframeLoaded) {
-           const iframe = document.createElement('iframe');
-              iframe.src = "https://silkycell.github.io/FiddleBops/";
-              iframe.width = "100%";
-              iframe.height = "600px";
-              iframe.loading = "lazy";
-              iframe.fetchpriority = "high";
-              iframe.title = "FiddleBops Music Creation Game";
-            iframeContainer.innerHTML = '';
-             iframeContainer.appendChild(iframe);
-          iframeLoaded = true;
-          playButton.style.display = 'none';
-        }
-
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+    
+      navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+      });
+        const playButton = document.querySelector('.overlay-button');
+        const iframeContainer = document.querySelector('.game-image-container');
+        let iframeLoaded = false;
+         playButton.addEventListener('click', () => {
+            if (!iframeLoaded) {
+               const iframe = document.createElement('iframe');
+                  iframe.src = "https://silkycell.github.io/FiddleBops/";
+                  iframe.width = "100%";
+                  iframe.height = "600px";
+                  iframe.loading = "lazy";
+                  iframe.fetchpriority = "high";
+                  iframe.title = "FiddleBops Music Creation Game";
+                iframeContainer.innerHTML = '';
+                 iframeContainer.appendChild(iframe);
+              iframeLoaded = true;
+              playButton.style.display = 'none';
+            }
+    
+        });
     });
-});
-</script>
-<style>
-  audio {width:210px}
-
-  @media screen and (max-width: 768px){
-    audio {width: 100px}
-    .game-card .game-image-container {
-     min-height:330px;
+    </script>
+    <style>
+      audio {width:210px}
+      @media screen and (max-width: 768px){
+        audio {width: 100px}
+        .game-card .game-image-container {
+     height:330px!important;;
 }
-    }
-</style>
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -387,10 +386,6 @@
       }
     });
     </script>
-<script
-type="text/javascript"
-src="https://app.termly.io/resource-blocker/82d389f0-279e-4868-9576-1962d3808078?autoBlock=off"
-></script>
 
 </body>
 </html>
