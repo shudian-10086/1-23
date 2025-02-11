@@ -47,6 +47,7 @@
                   iframe.src = "https://silkycell.github.io/FiddleBops/";
                   iframe.width = "100%";
                   iframe.loading = "lazy";
+                  iframe.height = "100%";
                   iframe.fetchpriority = "high";
                   iframe.title = "FiddleBops Music Creation Game";
                 iframeContainer.innerHTML = '';
@@ -60,8 +61,8 @@
     </script>
     <style>
       audio {width:210px}
+      iframe{margin-top:100px!important;height:500px}
       @media screen and (max-width: 768px){
-        iframe{top:100px}
         audio {width: 100px}
         .game-card .game-image-container {
      height:330px!important;;
