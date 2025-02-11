@@ -68,7 +68,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>Fiddle<span class="light">Bops</span></h1>
+              <h1><a href="/de/">Fiddle<span class="light">Bops</span></a></h1>
             </div>
              <button class="nav-toggle" aria-label="Navigation umschalten">☰</button>
             <nav class="nav-menu">
@@ -82,13 +82,13 @@
             </nav>
       <select style="float:right;">
         <option value="">Sprache</option>
-        <option data-url="/de/">Deutsch</option>
-        <option data-url="/">English</option>
-        <option data-url="/zh/">简体中文</option>  
-        <option data-url="/es/">Español</option>
-        <option data-url="/fr/">Français</option>
-        <option data-url="/ja/">日本語</option>
-        <option data-url="/ko/">한국어</option>
+        <option data-lang="en" data-url="/">English</option>
+        <option data-lang="zh-CN" data-url="/zh/">简体中文</option>  
+        <option data-lang="es" data-url="/es/">Español</option>
+        <option data-lang="fr" data-url="/fr/">Français</option>
+        <option data-lang="de" data-url="/de/">Deutsch</option>
+        <option data-lang="ja" data-url="/ja/">日本語</option>
+        <option data-lang="ko" data-url="/ko/">한국어</option>
         </select>
         </div>
     </header>
@@ -341,35 +341,58 @@
            <nav>
                <ul>
                   <li><a href="#about">Über uns</a></li>
-                  <li><a href="/privacy">Datenschutz</a></li>
+                  <li><a href="/de/privacy">Datenschutz</a></li>
+                  <li><a href="/de/terms-of-service">Nutzungsbedingungen</a></li>
                 </ul>
            </nav>
            <p class="copyright">© 2025 FiddleBops. Alle Rechte vorbehalten.</p>
       </div>
     </footer>
-    <script type="module">
-      function d(t) {
-          const n = t.target,
-                e = n.options[n.selectedIndex].getAttribute("data-url");
-          e && (window.location.href = e)
+    <script>
+      function goToLink(event) {
+        const select = event.target;
+        const selectedOption = select.options[select.selectedIndex];
+        const url = selectedOption.getAttribute('data-url');
+        if (url) {
+          window.location.href = url;
+        }
       }
-      
-      document.addEventListener("DOMContentLoaded", () => {
-          const t = document.querySelector("select");
-          if (t) {
-              t.addEventListener("change", d);
-              const n = window.location.pathname;
-              const c = Array.from(t.options);
-              for (let i = 1; i < c.length; i++) {
-                  const option = c[i];
-                  const dataUrl = option.getAttribute("data-url");
-                  if (dataUrl && n.startsWith(dataUrl)) {
-                      option.selected = true;
-                      return; // 找到匹配项后立即返回
-                  }
-              }
-              c[0].selected=true;
+  
+      // Add event listener
+      document.addEventListener('DOMContentLoaded', () => {
+        const select = document.querySelector('select');
+        if (select) {
+          select.addEventListener('change', goToLink);
+  
+          // Set current language based on the <html> tag's lang attribute
+          const htmlLang = document.documentElement.lang;
+          const options = Array.from(select.options);
+  
+          // Try to find an option that exactly matches the lang attribute
+          const currentOption = options.find(option =>
+            option.getAttribute('data-lang') === htmlLang
+          );
+  
+          if (currentOption) {
+            currentOption.selected = true;
+          } else {
+            // If no exact match is found, try to find a default option (data-lang="en" or "/")
+            let defaultOption = options.find(option =>
+              option.getAttribute('data-lang') === 'en' // common default
+            );
+  
+            if (!defaultOption) {
+              defaultOption = options.find(option =>
+                option.getAttribute('data-lang') === '/' // older convention
+              );
+            }
+  
+  
+            if (defaultOption) {
+              defaultOption.selected = true;
+            }
           }
+        }
       });
       </script>
 </body>
