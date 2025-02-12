@@ -495,7 +495,7 @@ footer .copyright{
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
     .game-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
     .comments .add-comment input[type="text"],
     .comments .add-comment input[type="email"]{
