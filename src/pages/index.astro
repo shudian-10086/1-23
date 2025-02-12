@@ -30,6 +30,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="canonical" href="https://www.playfiddlebops.com/"/>
+    <style>
+      audio {width:210px}
+
+.game-image-container {
+  position:relative; /*Important! set position to relative for container*/
+}
+      @media screen and (max-width: 768px){
+        audio {width: 100px}
+        .game-card .game-image-container {
+     height:330px!important;;
+}
+        }
+    </style>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const navToggle = document.querySelector('.nav-toggle');
@@ -63,8 +76,19 @@
 
                 // Add a fullscreen button
                 fullscreenButton = document.createElement('button');
-                fullscreenButton.textContent = "全屏"; // Fullscreen
-                fullscreenButton.classList.add('fullscreen-button');
+                fullscreenButton.textContent = "⤢ Fullscreen"; // Fullscreen
+
+                //Apply CSS styles directly
+                fullscreenButton.style.position = 'absolute';
+                fullscreenButton.style.top = '10px';
+                fullscreenButton.style.right = '10px';
+                fullscreenButton.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+                fullscreenButton.style.color = 'white';
+                fullscreenButton.style.border = 'none';
+                fullscreenButton.style.padding = '5px 10px';
+                fullscreenButton.style.cursor = 'pointer';
+                fullscreenButton.style.zIndex = '10';
+               //  fullscreenButton.classList.add('fullscreen-button'); //Remove class call ,we are applying the css to the object.
                 iframeContainer.appendChild(fullscreenButton);
 
                 fullscreenButton.addEventListener('click', () => {
@@ -79,7 +103,7 @@
                         } else if (document.webkitExitFullscreen) {
                             document.webkitExitFullscreen();
                         }
-                        fullscreenButton.textContent = "全屏";  // Change button text back
+                        fullscreenButton.textContent = "⤢ Fullscreen";  // Change button text back
                     } else {
                         // Request fullscreen
                         // Check if it's a mobile device
@@ -123,7 +147,7 @@
                             iframe.msRequestFullscreen();
                           }
                         }
-                        fullscreenButton.textContent = "退出全屏"; // Change button text
+                        fullscreenButton.textContent = "⤡ ESC"; // Change button text
                     }
                 });
 
@@ -135,38 +159,14 @@
         document.addEventListener('fullscreenchange', () => {
             if (fullscreenButton) {
                 if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
-                    fullscreenButton.textContent = "退出全屏";
+                    fullscreenButton.textContent = "⤡ ESC";
                 } else {
-                    fullscreenButton.textContent = "全屏";
+                    fullscreenButton.textContent = "⤢ Fullscreen";
                 }
             }
         });
     });
     </script>
-    <style>
-      audio {width:210px}
-    .fullscreen-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  z-index: 10; /* Ensure it's on top of the iframe */
-}
-
-.game-image-container {
-  position:relative; /*Important! set position to relative for container*/
-}
-      @media screen and (max-width: 768px){
-        audio {width: 100px}
-        .game-card .game-image-container {
-     height:330px!important;;
-}
-        }
-    </style>
 </head>
 <body>
     <header>
