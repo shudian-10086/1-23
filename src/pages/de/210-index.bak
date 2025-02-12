@@ -34,130 +34,35 @@
 }
         }
     </style>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
 
-        navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
-
-        const playButton = document.querySelector('.overlay-button');
-        const iframeContainer = document.querySelector('.game-image-container');
-        let iframeLoaded = false;
-        let iframe; // Declare iframe outside the click listener
-        let fullscreenButton; // Declare fullscreen button
-
-        playButton.addEventListener('click', () => {
-            if (!iframeLoaded) {
-                iframe = document.createElement('iframe');
-                iframe.src = "https://silkycell.github.io/FiddleBops/";
-                iframe.width = "100%";
-                iframe.loading = "lazy";
-                iframe.height = "100%";
-                iframe.fetchpriority = "high";
-                iframe.allowfullscreen = true; // Enable fullscreen
-                iframe.title = "FiddleBops Music Creation Game";
-                iframe.id = "fiddlebops-iframe"; // Add an ID to the iframe
-                iframeContainer.innerHTML = '';
-                iframeContainer.appendChild(iframe);
-                iframeLoaded = true;
-                playButton.style.display = 'none';
-
-                // Add a fullscreen button
-                fullscreenButton = document.createElement('button');
-                fullscreenButton.textContent = "⤢ Fullscreen"; // Fullscreen
-
-                //Apply CSS styles directly
-                fullscreenButton.style.position = 'absolute';
-                fullscreenButton.style.top = '10px';
-                fullscreenButton.style.right = '10px';
-                fullscreenButton.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-                fullscreenButton.style.color = 'white';
-                fullscreenButton.style.border = 'none';
-                fullscreenButton.style.padding = '5px 10px';
-                fullscreenButton.style.cursor = 'pointer';
-                fullscreenButton.style.zIndex = '10';
-               //  fullscreenButton.classList.add('fullscreen-button'); //Remove class call ,we are applying the css to the object.
-                iframeContainer.appendChild(fullscreenButton);
-
-                fullscreenButton.addEventListener('click', () => {
-                    if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
-                        // Exit fullscreen
-                        if (document.exitFullscreen) {
-                            document.exitFullscreen();
-                        } else if (document.msExitFullscreen) {
-                            document.msExitFullscreen();
-                        } else if (document.mozCancelFullScreen) {
-                            document.mozCancelFullScreen();
-                        } else if (document.webkitExitFullscreen) {
-                            document.webkitExitFullscreen();
-                        }
-                        fullscreenButton.textContent = "⤢ Fullscreen";  // Change button text back
-                    } else {
-                        // Request fullscreen
-                        // Check if it's a mobile device
-                        if (/Mobi|Android/i.test(navigator.userAgent)) {
-                          // Attempt to force landscape orientation
-                          screen.orientation.lock("landscape")
-                            .then(() => {
-                              // Trigger fullscreen after orientation lock
-                              if (iframe.requestFullscreen) {
-                                iframe.requestFullscreen();
-                              } else if (iframe.mozRequestFullScreen) {
-                                iframe.mozRequestFullScreen();
-                              } else if (iframe.webkitRequestFullscreen) {
-                                iframe.webkitRequestFullscreen();
-                              } else if (iframe.msRequestFullscreen) {
-                                iframe.msRequestFullscreen();
-                              }
-                            })
-                            .catch(error => {
-                              console.warn("Failed to lock screen orientation:", error);
-                              // Fallback: Try fullscreen anyway, might work on some devices
-                              if (iframe.requestFullscreen) {
-                                iframe.requestFullscreen();
-                              } else if (iframe.mozRequestFullScreen) {
-                                iframe.mozRequestFullScreen();
-                              } else if (iframe.webkitRequestFullscreen) {
-                                iframe.webkitRequestFullscreen();
-                              } else if (iframe.msRequestFullscreen) {
-                                iframe.msRequestFullscreen();
-                              }
-                            });
-                        } else {
-                          // For non-mobile devices, just request fullscreen
-                          if (iframe.requestFullscreen) {
-                            iframe.requestFullscreen();
-                          } else if (iframe.mozRequestFullScreen) {
-                            iframe.mozRequestFullScreen();
-                          } else if (iframe.webkitRequestFullscreen) {
-                            iframe.webkitRequestFullscreen();
-                          } else if (iframe.msRequestFullscreen) {
-                            iframe.msRequestFullscreen();
-                          }
-                        }
-                        fullscreenButton.textContent = "⤡ ESC"; // Change button text
-                    }
-                });
-
+  navToggle.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
+  });
+    const playButton = document.querySelector('.overlay-button');
+    const iframeContainer = document.querySelector('.game-image-container');
+    let iframeLoaded = false;
+     playButton.addEventListener('click', () => {
+        if (!iframeLoaded) {
+           const iframe = document.createElement('iframe');
+              iframe.src = "https://silkycell.github.io/FiddleBops/";
+              iframe.width = "100%";
+              iframe.height = "100%";
+              iframe.loading = "lazy";
+              iframe.fetchpriority = "high";
+              iframe.title = "FiddleBops Music Creation Game";
+            iframeContainer.innerHTML = '';
+             iframeContainer.appendChild(iframe);
+          iframeLoaded = true;
+          playButton.style.display = 'none';
         }
 
-        });
-
-        // Listen for fullscreen change events to update button text
-        document.addEventListener('fullscreenchange', () => {
-            if (fullscreenButton) {
-                if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
-                    fullscreenButton.textContent = "⤡ ESC";
-                } else {
-                    fullscreenButton.textContent = "⤢ Fullscreen";
-                }
-            }
-        });
     });
-    </script>
+});
+</script>
 </head>
 <body>
     <header>
