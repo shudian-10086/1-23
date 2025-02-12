@@ -43,6 +43,7 @@
         const iframeContainer = document.querySelector('.game-image-container');
         let iframeLoaded = false;
         let iframe; // Declare iframe outside the click listener
+        let fullscreenButton; // Declare fullscreen button
 
         playButton.addEventListener('click', () => {
             if (!iframeLoaded) {
@@ -60,57 +61,105 @@
                 iframeLoaded = true;
                 playButton.style.display = 'none';
 
-                // Request fullscreen after iframe loads
-                iframe.onload = () => {
-                  // Check if it's a mobile device
-                  if (/Mobi|Android/i.test(navigator.userAgent)) {
-                    // Attempt to force landscape orientation
-                    screen.orientation.lock("landscape")
-                      .then(() => {
-                        // Trigger fullscreen after orientation lock
-                        if (iframe.requestFullscreen) {
-                          iframe.requestFullscreen();
-                        } else if (iframe.mozRequestFullScreen) {
-                          iframe.mozRequestFullScreen();
-                        } else if (iframe.webkitRequestFullscreen) {
-                          iframe.webkitRequestFullscreen();
-                        } else if (iframe.msRequestFullscreen) {
-                          iframe.msRequestFullscreen();
-                        }
-                      })
-                      .catch(error => {
-                        console.warn("Failed to lock screen orientation:", error);
-                        // Fallback: Try fullscreen anyway, might work on some devices
-                         if (iframe.requestFullscreen) {
-                          iframe.requestFullscreen();
-                        } else if (iframe.mozRequestFullScreen) {
-                          iframe.mozRequestFullScreen();
-                        } else if (iframe.webkitRequestFullscreen) {
-                          iframe.webkitRequestFullscreen();
-                        } else if (iframe.msRequestFullscreen) {
-                          iframe.msRequestFullscreen();
-                        }
-                      });
-                  } else{
-                     // For non-mobile devices, just request fullscreen
-                     if (iframe.requestFullscreen) {
-                          iframe.requestFullscreen();
-                        } else if (iframe.mozRequestFullScreen) {
-                          iframe.mozRequestFullScreen();
-                        } else if (iframe.webkitRequestFullscreen) {
-                          iframe.webkitRequestFullscreen();
-                        } else if (iframe.msRequestFullscreen) {
-                          iframe.msRequestFullscreen();
-                        }
-                  }
-                };
-            }
+                // Add a fullscreen button
+                fullscreenButton = document.createElement('button');
+                fullscreenButton.textContent = "全屏"; // Fullscreen
+                fullscreenButton.classList.add('fullscreen-button');
+                iframeContainer.appendChild(fullscreenButton);
 
+                fullscreenButton.addEventListener('click', () => {
+                    if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+                        // Exit fullscreen
+                        if (document.exitFullscreen) {
+                            document.exitFullscreen();
+                        } else if (document.msExitFullscreen) {
+                            document.msExitFullscreen();
+                        } else if (document.mozCancelFullScreen) {
+                            document.mozCancelFullScreen();
+                        } else if (document.webkitExitFullscreen) {
+                            document.webkitExitFullscreen();
+                        }
+                        fullscreenButton.textContent = "全屏";  // Change button text back
+                    } else {
+                        // Request fullscreen
+                        // Check if it's a mobile device
+                        if (/Mobi|Android/i.test(navigator.userAgent)) {
+                          // Attempt to force landscape orientation
+                          screen.orientation.lock("landscape")
+                            .then(() => {
+                              // Trigger fullscreen after orientation lock
+                              if (iframe.requestFullscreen) {
+                                iframe.requestFullscreen();
+                              } else if (iframe.mozRequestFullScreen) {
+                                iframe.mozRequestFullScreen();
+                              } else if (iframe.webkitRequestFullscreen) {
+                                iframe.webkitRequestFullscreen();
+                              } else if (iframe.msRequestFullscreen) {
+                                iframe.msRequestFullscreen();
+                              }
+                            })
+                            .catch(error => {
+                              console.warn("Failed to lock screen orientation:", error);
+                              // Fallback: Try fullscreen anyway, might work on some devices
+                              if (iframe.requestFullscreen) {
+                                iframe.requestFullscreen();
+                              } else if (iframe.mozRequestFullScreen) {
+                                iframe.mozRequestFullScreen();
+                              } else if (iframe.webkitRequestFullscreen) {
+                                iframe.webkitRequestFullscreen();
+                              } else if (iframe.msRequestFullscreen) {
+                                iframe.msRequestFullscreen();
+                              }
+                            });
+                        } else {
+                          // For non-mobile devices, just request fullscreen
+                          if (iframe.requestFullscreen) {
+                            iframe.requestFullscreen();
+                          } else if (iframe.mozRequestFullScreen) {
+                            iframe.mozRequestFullScreen();
+                          } else if (iframe.webkitRequestFullscreen) {
+                            iframe.webkitRequestFullscreen();
+                          } else if (iframe.msRequestFullscreen) {
+                            iframe.msRequestFullscreen();
+                          }
+                        }
+                        fullscreenButton.textContent = "退出全屏"; // Change button text
+                    }
+                });
+
+        }
+
+        });
+
+        // Listen for fullscreen change events to update button text
+        document.addEventListener('fullscreenchange', () => {
+            if (fullscreenButton) {
+                if (document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+                    fullscreenButton.textContent = "退出全屏";
+                } else {
+                    fullscreenButton.textContent = "全屏";
+                }
+            }
         });
     });
     </script>
     <style>
       audio {width:210px}
+      .fullscreen-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 10; /* Ensure it's on top of the iframe */
+}
+
+.game-image-container {
+  position:relative; /*Important! set position to relative for container*/
+}
       @media screen and (max-width: 768px){
         audio {width: 100px}
         .game-card .game-image-container {
