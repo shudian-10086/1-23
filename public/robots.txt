@@ -1,7 +1,7 @@
 User-agent: *
 
-Allow: /terms-of-service
-Allow: /privacy
+Allow: /terms-of-service/
+Allow: /privacy/
 Allow: /
 
 Disallow: *terms-of-service
