@@ -1,3 +1,6 @@
+---
+import TrendingGames from '../trending-games.astro';
+---
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,17 +50,7 @@
     });
     </script>
     <script>
-        let iframeLoaded = false; // Track if iframe is loaded
-        const iframe = document.getElementById("fiddlebops-iframe"); // Moved outside loadIframe to be accessible
-        const playButton = document.getElementById("playButton");
-
-        function loadIframe() {
-            iframe.src = "https://silkycell.github.io/FiddleBops/"; // Set the source
-             playButton.style.display = "none"; //Hide button
-            iframeLoaded = true; // Set to true so it's not loaded again
-            iframe.focus(); // Give focus to iframe for keyboard controls if necessary
-        }
-          playButton.addEventListener("click", loadIframe); // Listen for click
+eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[0-7]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('let 2=false;3 0=4.5("6-0");3 1=4.5("1");function 7(){0.src="https://6.netlify.app/";1.style.display="none";2=true;0.focus()}1.addEventListener("click",7);',[],8,'iframe|playButton|iframeLoaded|const|document|getElementById|fiddlebops|loadIframe'.split('|'),0,{}))
     </script>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JME3P55QJ"></script>
@@ -112,81 +105,81 @@
                 </div>
             </div>
         </section>
-
+<TrendingGames />
         <section class="games">
           <div class="container">
             <h2>Explora los diferentes sonidos en FiddleBops</h2>
-               <div class="game-grid">
-                 <div class="game">
-                      <div class="game-logo">
-                          <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fbeat1.png&w=1920&q=75" alt="Beat 1">
-                       </div>
-                      <p>Beat 1</p>
-                      <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/beat1.wav" type="audio/wav"></audio>
-                  </div>
-                  <div class="game">
-                    <div class="game-logo">
-                       <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fbeat3.png&w=1920&q=75" alt="Beat 3">
-                    </div>
-                      <p>Beat 3</p>
-                      <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/beat3.wav" type="audio/wav"></audio>
-                  </div>
+                 <div class="game-grid">
                    <div class="game">
-                     <div class="game-logo">
-                         <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fbeat5.png&w=1920&q=75" alt="Beat 5">
+                        <div class="game-logo">
+                            <img src="../img-1.png" alt="Beat 1">
+                         </div>
+                        <p>Beat 1</p>
+                        <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/beat1.wav" type="audio/wav"></audio>
                     </div>
-                      <p>Beat 5</p>
-                      <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/beat5.wav" type="audio/wav"></audio>
-                  </div>
-                  <div class="game">
-                     <div class="game-logo">
-                       <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Feffect3.png&w=1920&q=75" alt="Effect 3">
-                     </div>
-                      <p>Effect 3</p>
-                      <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/effect3.wav" type="audio/wav"></audio>
-                  </div>
-                   <div class="game">
+                    <div class="game">
                       <div class="game-logo">
-                        <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Feffect4.png&w=1920&q=75" alt="Effect 4">
+                         <img src="../img-2.png" alt="Beat 3">
                       </div>
-                      <p>Effect 4</p>
-                      <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/effect4.wav" type="audio/wav"></audio>
-                  </div>
-                  <div class="game">
-                     <div class="game-logo">
-                       <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Feffect5.png&w=1920&q=75" alt="Effect 5">
-                     </div>
-                      <p>Effect 5</p>
-                      <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/effect5.wav" type="audio/wav"></audio>
-                  </div>
-                  <div class="game">
-                     <div class="game-logo">
-                       <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fvoice1.png&w=1920&q=75" alt="Voice 2">
-                     </div>
-                      <p>Voice 2</p>
-                      <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/voice2.wav" type="audio/wav"></audio>
-                  </div>
-                  <div class="game">
-                      <div class="game-logo">
-                           <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fvoice3.png&w=1920&q=75" alt="Voice 3">
-                       </div>
-                      <p>Voice 3</p>
-                      <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/voice3.wav" type="audio/wav"></audio>
-                  </div>
-                   <div class="game">
-                     <div class="game-logo">
-                         <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fvoice5.png&w=1920&q=75" alt="Voice 5">
-                     </div>
-                      <p>Voice 5</p>
-                      <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/voice5.wav" type="audio/wav"></audio>
-                  </div>
-                  <div class="game">
+                        <p>Beat 3</p>
+                        <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/beat3.wav" type="audio/wav"></audio>
+                    </div>
+                     <div class="game">
                        <div class="game-logo">
-                          <img src="https://fiddlebops.net/_next/image?url=https%3A%2F%2Fcdn.fiddlebops.net%2Fcharacters%2Fimage%2Fbonus1.png&w=1920&q=75" alt="Bonus 1">
+                           <img src="../img-3.png" alt="Beat 5">
+                      </div>
+                        <p>Beat 5</p>
+                        <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/beat5.wav" type="audio/wav"></audio>
+                    </div>
+                    <div class="game">
+                       <div class="game-logo">
+                         <img src="../img-4.png" alt="Effect 3">
                        </div>
-                      <p>Bonus 1</p>
-                      <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/bonus1.wav" type="audio/wav"></audio>
-                 </div>
+                        <p>Effect 3</p>
+                        <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/effect3.wav" type="audio/wav"></audio>
+                    </div>
+                     <div class="game">
+                        <div class="game-logo">
+                          <img src="../img-5.png" alt="Effect 4">
+                        </div>
+                        <p>Effect 4</p>
+                        <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/effect4.wav" type="audio/wav"></audio>
+                    </div>
+                    <div class="game">
+                       <div class="game-logo">
+                         <img src="../img-6.png" alt="Effect 5">
+                       </div>
+                        <p>Effect 5</p>
+                        <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/effect5.wav" type="audio/wav"></audio>
+                    </div>
+                    <div class="game">
+                       <div class="game-logo">
+                         <img src="../img-7.png" alt="Voice 2">
+                       </div>
+                        <p>Voice 2</p>
+                        <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/voice2.wav" type="audio/wav"></audio>
+                    </div>
+                    <div class="game">
+                        <div class="game-logo">
+                             <img src="../img-8.png" alt="Voice 3">
+                         </div>
+                        <p>Voice 3</p>
+                        <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/voice3.wav" type="audio/wav"></audio>
+                    </div>
+                     <div class="game">
+                       <div class="game-logo">
+                           <img src="../img-9.png" alt="Voice 5">
+                       </div>
+                        <p>Voice 5</p>
+                        <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/voice5.wav" type="audio/wav"></audio>
+                    </div>
+                    <div class="game">
+                         <div class="game-logo">
+                            <img src="../img-10.png" alt="Bonus 1">
+                         </div>
+                        <p>Bonus 1</p>
+                        <audio controls="" preload="metadata" class="w-[100px] max-w-full" crossorigin="anonymous"><source src="https://www.playfiddlebops.com/bonus1.wav" type="audio/wav"></audio>
+                   </div>
                </div>
           </div>
 

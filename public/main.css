@@ -17,6 +17,7 @@ a {
    color: #333;
    display: block;
 }
+a:hover{color:orange;}
 header {
     background-color: #ffb74d; /* Light orange header */
     padding: 10px 0;
@@ -120,7 +121,26 @@ header nav ul li a:hover {
      -webkit-backdrop-filter: blur(10px);
      background-size:100%;
 }
-
+  .game .game-l-2 img {
+    width: 100%!important;
+    height:100%!important;
+    margin: 0 auto;}
+.game-card .game-iframe-pop,.game-card .game-iframe-new{width:13.5%;float:left;margin:0;padding:0}
+.game-card .game-iframe-pop ul,.game-card .game-iframe-new ul{list-style-type:none;margin:0;padding:0}
+.game-card .game-iframe-pop li,.game-card .game-iframe-new li{width:100%}
+.game-card .game-iframe-pop li a:hover,.game-card .game-iframe-new li a:hover{color:orange}
+.game-card .game-iframe-pop img,.game-card .game-iframe-new img{width:100%}
+.game-card .game-iframe-pop .title,.game-card .game-iframe-new .title{font-weight:700;font-size:14px;padding-bottom:10px}
+.game-card .game-iframe-pop h3,.game-card .game-iframe-new h3{font-size:16px}
+      @media screen and (max-width: 980px){
+        .game-card .game-iframe-sprunki {
+     width:100%;}
+     .game-card .game-iframe-pop{display:none}
+     .game-card .game-iframe-new{width:100%;}
+     .game-card .game-iframe-new ul{grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));gap: 15px;display:grid;text-align: center;}
+     .game-card .game-iframe-new li{border-radius: 10px;display: flex;flex-direction: column;align-items: center;justify-content: space-between;}
+     .game-card .game-iframe-new h3{font-size:20px}
+      }
 .game-card .game-image{
      text-align: left; /* Align image to the left */
     width:100%;/* Limit the image block width */
