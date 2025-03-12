@@ -1,4 +1,6 @@
 ---
+import NewGames from './new-games.astro';
+import PopularGames from './popular-games.astro';
 import TrendingGames from './trending-games.astro';
 ---
 <!DOCTYPE html>
@@ -31,17 +33,33 @@ import TrendingGames from './trending-games.astro';
     <link rel="canonical" href="https://www.playfiddlebops.com/"/>
     <style>
       audio {width:210px}
-      .game .game-l-1 img {
+.game-card .game-iframe-sprunki {
+  float:left;
+    width: 69%;
+    margin:0;
+    padding:0;
+     height:600px;
+     background-color:#fff;
+     position: relative;
+     background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(/tw.jpg);
+     background-repeat: no-repeat;
+     background-position: center center;
+     background-size:cover;
+}
+      .game .game-l-2 img {
     width: 100%!important;
-    min-height:200px;
     height:auto;
     margin: 0 auto;}
+      @media screen and (max-width: 980px){
+        .game-card .game-iframe-sprunki {
+     width:100%;}
+      }
       @media screen and (max-width: 768px){
         audio {width: 120px}
-        .game .game-l-1 img{min-height:auto}
-        .game-card .game-image-container {
-     height:330px!important;;
+        .game-card .game-iframe-sprunki {
+     height:330px!important;
 }
+.game-info{display:none}
         }
     </style>
     <script>
@@ -104,10 +122,12 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
                         <p>Start your musical journey! FiddleBops is a fan-made project inspired by Incredibox. Here, you can freely mix and match various sounds to create your own unique music.</p>
                     </div>
 
-                   <div class="game-image-container">
-                    <iframe id="fiddlebops-iframe" src="" allowfullscreen width="100%" height="100%"></iframe>
+<PopularGames />
+                   <div class="game-iframe-sprunki">
+                    <iframe id="fiddlebops-iframe" src=""  allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen width="100%" height="100%"></iframe>
                         <button id="playButton">Play</button>
                     </div>
+<NewGames />
 
                 </div>
             </div>

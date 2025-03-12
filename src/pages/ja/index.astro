@@ -1,5 +1,8 @@
 ---
 import TrendingGames from '../trending-games.astro';
+import NewGames from '../new-games.astro';
+import PopularGames from '../popular-games.astro';
+import TrendingGames from '../trending-games.astro';
 ---
 <!DOCTYPE html>
 <html lang="ja">
@@ -31,11 +34,33 @@ import TrendingGames from '../trending-games.astro';
     <link rel="canonical" href="https://www.playfiddlebops.com/ja/"/>
     <style>
       audio {width:210px}
+.game-card .game-iframe-sprunki {
+  float:left;
+    width: 69%;
+    margin:0;
+    padding:0;
+     height:600px;
+     background-color:#fff;
+     position: relative;
+     background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(/tw.jpg);
+     background-repeat: no-repeat;
+     background-position: center center;
+     background-size:cover;
+}
+      .game .game-l-2 img {
+    width: 100%!important;
+    height:auto;
+    margin: 0 auto;}
+      @media screen and (max-width: 980px){
+        .game-card .game-iframe-sprunki {
+     width:100%;}
+      }
       @media screen and (max-width: 768px){
         audio {width: 120px}
-        .game-card .game-image-container {
-     height:330px!important;;
+        .game-card .game-iframe-sprunki {
+     height:330px!important;
 }
+.game-info{display:none}
         }
     </style>
     <script>
@@ -75,7 +100,6 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
                     <li><a href="#play">プレイ</a></li>
                      <li><a href="#about">概要</a></li>
                      <li><a href="#faq">よくある質問</a></li>
-                     <li><a href="#comments">レビュー</a></li>
                 </ul>
             </nav>
       <select style="float:right;">
@@ -98,14 +122,43 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
                         <h2>FiddleBopsへようこそ！</h2>
                         <p>音楽制作の旅を始めましょう！FiddleBopsはIncrediboxにインスパイアされたファン制作のプロジェクトです。ここでは、様々なサウンドを自由にミックスして、あなただけのユニークな音楽を作り出すことができます。</p>
                     </div>
-                   <div class="game-image-container">
-                    <iframe id="fiddlebops-iframe" src="" allowfullscreen width="100%" height="100%"></iframe>
+<PopularGames />
+                   <div class="game-iframe-sprunki">
+                    <iframe id="fiddlebops-iframe" src=""  allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen width="100%" height="100%"></iframe>
                         <button id="playButton">Play</button>
                     </div>
+<NewGames />
+
                 </div>
             </div>
         </section>
 <TrendingGames />
+          <section class="about" id="about">
+            <div class="container">
+              <h2>FiddleBops ゲームプレイ</h2>
+              <div class="about-content">
+                    <h3>ゲーム概要</h3>
+                     <p>『FiddleBops』は『Incredibox』シリーズにインスパイアされた無料オンライン音楽制作ゲームで、インタラクティブ性と創造性を兼ね備え、プレイヤーはゲームを通じて音楽制作の楽しさを探求できます。このゲームは、ウェールズのジャズバンドFiddleBopの音楽スタイルからインスピレーションを得ており、活気に満ちたメロディーとリズムを核としています。</p>
+                    <hr>
+                    <h3>ゲームプレイ</h3>
+                      <h4>キャラクターとサウンドエフェクトの選択</h4>
+                         <p>プレイヤーは複数のキャラクターから選択し、キャラクターに異なるサウンドエフェクトを割り当てることができます。</p>
+                     <h4>制作と実験</h4>
+                         <p>キャラクターとサウンドエフェクトをドラッグアンドドロップで組み合わせることで、プレイヤーはユニークな音楽作品を作成できます。</p>
+                    <h4>新しいコンテンツのロック解除</h4>
+                         <p>ゲームが進むにつれて、プレイヤーは新しいキャラクター、サウンドエフェクト、楽器をロック解除し、制作をさらに豊かにすることができます。</p>
+                     <h4>コミュニティインタラクション</h4>
+                        <p>プレイヤーは自分の作品をコミュニティに共有し、他のプレイヤーと制作のヒントを交換できます。</p>
+                    <hr>
+                  <h3>ゲームの利点</h3>
+                      <ul>
+                          <li>創造性の向上：音楽制作を通じて、プレイヤーはリズム感と音楽制作スキルを向上させることができます。</li>
+                          <li>ソーシャルインタラクション：このゲームは活気に満ちたコミュニティを提供し、プレイヤーは他の音楽愛好家と交流できます。</li>
+                           <li>継続的な更新：ゲームは定期的に新しいコンテンツを追加し、プレイヤーに新鮮な体験を提供します。</li>
+                   </ul>
+                 </div>
+            </div>
+        </section>
         <section class="games">
           <div class="container">
             <h2>FiddleBops の様々なサウンドを探求しよう</h2>
@@ -212,24 +265,6 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
                     <h4>すべての年齢層に適しています</h4>
                          <p>このゲームはシンプルで使いやすく設計されており、初心者からプロの音楽愛好家まで適しています。</p>
                      <hr>
-
-                    <h3>ゲームプレイ</h3>
-                      <h4>キャラクターとサウンドエフェクトの選択</h4>
-                         <p>プレイヤーは複数のキャラクターから選択し、キャラクターに異なるサウンドエフェクトを割り当てることができます。</p>
-                     <h4>制作と実験</h4>
-                         <p>キャラクターとサウンドエフェクトをドラッグアンドドロップで組み合わせることで、プレイヤーはユニークな音楽作品を作成できます。</p>
-                    <h4>新しいコンテンツのロック解除</h4>
-                         <p>ゲームが進むにつれて、プレイヤーは新しいキャラクター、サウンドエフェクト、楽器をロック解除し、制作をさらに豊かにすることができます。</p>
-                     <h4>コミュニティインタラクション</h4>
-                        <p>プレイヤーは自分の作品をコミュニティに共有し、他のプレイヤーと制作のヒントを交換できます。</p>
-                    <hr>
-                  <h3>ゲームの利点</h3>
-                      <ul>
-                          <li>創造性の向上：音楽制作を通じて、プレイヤーはリズム感と音楽制作スキルを向上させることができます。</li>
-                          <li>ソーシャルインタラクション：このゲームは活気に満ちたコミュニティを提供し、プレイヤーは他の音楽愛好家と交流できます。</li>
-                           <li>継続的な更新：ゲームは定期的に新しいコンテンツを追加し、プレイヤーに新鮮な体験を提供します。</li>
-                   </ul>
-                    <hr>
                   <h3>まとめ</h3>
                    <p>『FiddleBops』は、音楽制作とインタラクティブな体験を組み合わせたゲームで、音楽好きのすべてのプレイヤーに適しています。シンプルなリズムチャレンジでも、複雑な音楽制作でも、プレイヤーのニーズを満たすことができます。</p>
                  </div>
@@ -284,53 +319,6 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
         </section>
 
 
-    <section class="comments" id="comments">
-         <div class="container">
-            <h2>FiddleBopsゲームのプレイヤーレビュー</h2>
-             <div class="comment">
-                 <p class="author">音楽愛好家 <span class="time">1ヶ月前</span></p>
-                  <p>FiddleBopsは私がビートを作るのに最適です！ここのサウンドエフェクトは素晴らしく、使うのがとても楽しいです。</p>
-                  <div class="actions">
-                    <a href="#">返信</a>
-                    <span>❤️ いいね 0</span>
-                    <span>💔 わるいね 0</span>
-                  </div>
-           </div>
-              <div class="comment">
-                 <p class="author">ビートマスター <span class="time">2ヶ月前</span></p>
-                  <p>FiddleBopsは私のお気に入りの音楽制作ツールです。強くお勧めします！</p>
-                  <div class="actions">
-                     <a href="#">返信</a>
-                    <span>❤️ いいね 3</span>
-                    <span>💔 わるいね 1</span>
-                  </div>
-              </div>
-
-               <div class="comment">
-                  <p class="author">リズムエキスパート <span class="time">3ヶ月前</span></p>
-                  <p>ここのミキシングツールは非常に使いやすく、出来上がる効果も素晴らしいです！</p>
-                  <div class="actions">
-                   <a href="#">返信</a>
-                    <span>❤️ いいね 4</span>
-                    <span>💔 わるいね 0</span>
-                  </div>
-               </div>
-               <div class="comment">
-                 <p class="author">サウンドクリエイター <span class="time">4ヶ月前</span></p>
-                  <p>FiddleBopsを使って、私の音楽の夢を実現するのが大好きです。これは間違いなく私の専用の音楽空間です！</p>
-                  <div class="actions">
-                   <a href="#">返信</a>
-                    <span>❤️ いいね 46</span>
-                    <span>💔 わるいね 7</span>
-                   </div>
-               </div>
-             <div class="comment">
-                  <p class="author">新米作曲家 <span class="time">5ヶ月前</span></p>
-                  <p>FiddleBopsを探求し始めたばかりですが、すでに私のお気に入りのツールの1つになっています！</p>
-               </div>
-
-        </div>
-     </section>
     </main>
 
     <footer>
