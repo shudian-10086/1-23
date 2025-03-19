@@ -1,3 +1,6 @@
+---
+import NAV from '../nav.astro';
+---
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -41,15 +44,13 @@
         <div class="logo">
           <h1><a href="/de/">Fiddle<span class="light">Bops</span></a></h1>
         </div>
-         <button class="nav-toggle" aria-label="Navigation umschalten">☰</button>
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="/de/">Startseite</a></li>
-                <li><a href="/de/#play">Spielen</a></li>
-                 <li><a href="/de/#about">Über</a></li>
-                 <li><a href="/de/#faq">FAQ</a></li>
-            </ul>
-        </nav>
+             <button class="nav-toggle" aria-label="Navigation umschalten">☰</button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="/de/">Startseite</a></li>
+                    <NAV />
+                </ul>
+            </nav>
   <select style="float:right;">
     <option data-lang="en" data-url="/terms-of-service/">English</option>
     <option data-lang="zh-CN" data-url="/zh/terms-of-service/">简体中文</option>  
