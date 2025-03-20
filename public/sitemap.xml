@@ -2,13 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.playfiddlebops.com/</loc> 
-    <lastmod>2025-03-19</lastmod>
+    <lastmod>2025-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
       <url>
     <loc>https://www.playfiddlebops.com/games/</loc> 
-    <lastmod>2025-03-19</lastmod>
+    <lastmod>2025-03-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-meets-the-cat-spell/</loc> 
+    <lastmod>2025-03-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/incredibox-shatter-sprunk/</loc> 
+    <lastmod>2025-03-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-play-random/</loc> 
+    <lastmod>2025-03-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-basical/</loc> 
+    <lastmod>2025-03-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

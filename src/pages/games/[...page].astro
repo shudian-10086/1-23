@@ -2,6 +2,10 @@
 import NAV from '../nav.astro';
 export function getStaticPaths({ paginate }) {
   const astronautPages = [
+    { astronaut: ["/incredibox-shatter-sprunk/","/Sprunki Meets The Cat Spell.png","Sprunki Meets The Cat Spell"]},
+    { astronaut: ["/incredibox-shatter-sprunk/","/Incredibox Shatter Sprunk.png","Incredibox Shatter Sprunk"]},
+    { astronaut: ["/sprunki-play-random/","/Sprunki Play Random.png","Sprunki Play Random"]},
+    { astronaut: ["/sprunki-basical/","/Sprunki Basical.png","Sprunki Basical"]},
     { astronaut: ["/super-sprunki-brasil/","/Super Sprunki Brasil.png","Super Sprunki Brasil"]},
     { astronaut: ["/sprunki-night-time/","/Sprunki Night Time.png","Sprunki Night Time"]},
     { astronaut: ["/incredibox/","/Incredibox.png","Incredibox"]},
@@ -22,7 +26,7 @@ export function getStaticPaths({ paginate }) {
   ];
 
   // 根据宇航员数组生成页面，每页2项
-  return paginate(astronautPages, { pageSize: 20 });
+  return paginate(astronautPages, { pageSize: 30 });
 }
 // 所有分页数据都在 "page" 参数中传递
 const { page } = Astro.props;
@@ -32,7 +36,7 @@ const { page } = Astro.props;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FiddleBops Game World- Free Online FiddleBops Incredibox Game</title>
+    <title>ALL Games - FiddleBops Game World</title>
     <meta name="description" content="Create your unique music with FiddleBops! This fan-made project, inspired by Incredibox, lets you mix and match various sounds to compose personalized tracks.">
     <meta name="robots" content="index, follow"/>
     <link rel="canonical" href="https://www.playfiddlebops.com/games/"/>
@@ -40,14 +44,14 @@ const { page } = Astro.props;
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "FiddleBops Game World- Free Online FiddleBops Incredibox Game",
+      "name": "ALL Games - FiddleBops Game World",
       "alternateName": "playfiddlebops.com",
       "url": "https://www.playfiddlebops.com/games/",
       "description": "Create your unique music with FiddleBops! This fan-made project, inspired by Incredibox, lets you mix and match various sounds to compose personalized tracks."
     }
     </script>
     
-    <meta property="og:title" content="FiddleBops Game World- Free Online FiddleBops Incredibox Game"/>
+    <meta property="og:title" content="ALL Games - FiddleBops Game World"/>
     <meta property="og:description" content="Create your unique music with FiddleBops! This fan-made project, inspired by Incredibox, lets you mix and match various sounds to compose personalized tracks."/>
     <meta property="og:url" content="https://www.playfiddlebops.com/games/"/>
     <meta property="og:site_name" content="FiddleBops"/>
@@ -57,7 +61,7 @@ const { page } = Astro.props;
 
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="https://www.playfiddlebops.com/games/"/>
-    <meta name="twitter:title" content="FiddleBops Game World- Free Online FiddleBops Incredibox Game"/>
+    <meta name="twitter:title" content="ALL Games - FiddleBops Game World"/>
     <meta name="twitter:description" content="Create your unique music with FiddleBops! This fan-made project, inspired by Incredibox, lets you mix and match various sounds to compose personalized tracks."/>
     <meta name="twitter:image" content="https://www.playfiddlebops.com/tw.jpg"/>
 
