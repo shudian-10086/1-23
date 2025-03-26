@@ -2,14 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.playfiddlebops.com/</loc> 
-    <lastmod>2025-03-25</lastmod>
+    <lastmod>2025-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
       <url>
     <loc>https://www.playfiddlebops.com/games/</loc> 
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+    <loc>https://www.playfiddlebops.com/games/2/</loc> 
     <lastmod>2025-03-25</lastmod>
     <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/pikmin-no-sprunki/</loc> 
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/the-haze-pixelbox/</loc> 
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-retake-bonus-characters/</loc> 
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-red-sun/</loc> 
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-abgerny/</loc> 
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/yojou-sprunki-mustard/</loc> 
+    <lastmod>2025-03-26</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
       <url>
