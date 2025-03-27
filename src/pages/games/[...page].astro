@@ -2,26 +2,34 @@
 import NAV from '../nav.astro';
 export function getStaticPaths({ paginate }) {
   const astronautPages = [
-    { astronaut: ["/pikmin-no-sprunki/","/pikmin-no-sprunki.png","Pikmin No Sprunki"]}, 
-    { astronaut: ["/the-haze-pixelbox/","/the-haze-pixelbox.png","The Haze Pixelbox"]}, 
-    { astronaut: ["/yojou-sprunki-mustard/","/yojou-sprunki-mustard.png","Yojou Sprunki Mustard"]}, 
-    { astronaut: ["/sprunki-retake-bonus-characters/","/sprunki-retake-bonus-characters.png","Sprunki Retake Bonus Characters"]}, 
-    { astronaut: ["/sprunki-red-sun/","/sprunki-red-sun.png","Sprunki Red Sun"]}, 
-    { astronaut: ["/sprunki-abgerny/","/sprunki-abgerny.png","Sprunki Abgerny"]}, 
+    { astronaut: ["/incredibox-sprunksters/","/incredibox-sprunksters.png","Incredibox Sprunksters"]},
+    { astronaut: ["/sprunki-phase-1/","/sprunki-phase-1.png","Sprunki Phase 1"]},
+    { astronaut: ["/sprunki-phase-2-5/","/sprunki-phase-2-5.png","Sprunki Phase 2.5"]},
+    { astronaut: ["/sprunki-phase-8/","/sprunki-phase-8.png","Sprunki Phase 8"]},
+    { astronaut: ["/sprunki-babies/","/sprunki-babies.png","Sprunki Babies"]},
+    { astronaut: ["/mundo-torajo-sprunki/","/mundo-torajo-sprunki.png","Mundo Torajo Sprunki"]},
+    { astronaut: ["/sprunki-minecraft/","/sprunki-minecraft.png","Sprunki Minecraft"]},
 
-    { astronaut: ["/sprunki-christmas/","/Sprunki Christmas.png","Sprunki Christmas"]}, 
-    { astronaut: ["/sprunki-police-and-prisoners/","/Sprunki Police And Prisoners.png","Sprunki Police And Prisoners"]}, 
-    { astronaut: ["/sprunki-sepbox-steel-factory/","/Sprunki Sepbox Steel Factory.png","Sprunki x Sepbox Steel Factory"]}, 
-    { astronaut: ["/sprunki-like-minecraft/","/Sprunki Like Minecraft.png","Sprunki Like Minecraft"]}, 
-    { astronaut: ["/sprunki-but-with-memes/","/Sprunki But With Memes.png","Sprunki But With Memes"]}, 
-    { astronaut: ["/sprunki-halloween/","/Sprunki Halloween.png","Sprunki Halloween"]}, 
-    { astronaut: ["/sprunkr-but-sprunki/","/Sprunkr But Sprunki.png","Sprunkr But Sprunki"]}, 
+    { astronaut: ["/pikmin-no-sprunki/","/pikmin-no-sprunki.png","Pikmin No Sprunki"]},
+    { astronaut: ["/the-haze-pixelbox/","/the-haze-pixelbox.png","The Haze Pixelbox"]},
+    { astronaut: ["/yojou-sprunki-mustard/","/yojou-sprunki-mustard.png","Yojou Sprunki Mustard"]},
+    { astronaut: ["/sprunki-retake-bonus-characters/","/sprunki-retake-bonus-characters.png","Sprunki Retake Bonus Characters"]},
+    { astronaut: ["/sprunki-red-sun/","/sprunki-red-sun.png","Sprunki Red Sun"]},
+    { astronaut: ["/sprunki-abgerny/","/sprunki-abgerny.png","Sprunki Abgerny"]},
+
+    { astronaut: ["/sprunki-christmas/","/Sprunki Christmas.png","Sprunki Christmas"]},
+    { astronaut: ["/sprunki-police-and-prisoners/","/Sprunki Police And Prisoners.png","Sprunki Police And Prisoners"]},
+    { astronaut: ["/sprunki-sepbox-steel-factory/","/Sprunki Sepbox Steel Factory.png","Sprunki x Sepbox Steel Factory"]},
+    { astronaut: ["/sprunki-like-minecraft/","/Sprunki Like Minecraft.png","Sprunki Like Minecraft"]},
+    { astronaut: ["/sprunki-but-with-memes/","/Sprunki But With Memes.png","Sprunki But With Memes"]},
+    { astronaut: ["/sprunki-halloween/","/Sprunki Halloween.png","Sprunki Halloween"]},
+    { astronaut: ["/sprunkr-but-sprunki/","/Sprunkr But Sprunki.png","Sprunkr But Sprunki"]},
     { astronaut: ["/sprunki-mustard/","/Sprunki Mustard.png","Sprunki Mustard"]}, 
-    { astronaut: ["/incredibox-sprinkle/","/Incredibox Sprinkle.png","Incredibox Sprinkle"]}, 
-    { astronaut: ["/sprunki-good-night/","/Sprunki Good Night.png","Sprunki Good Night"]}, 
+    { astronaut: ["/incredibox-sprinkle/","/Incredibox Sprinkle.png","Incredibox Sprinkle"]},
+    { astronaut: ["/sprunki-good-night/","/Sprunki Good Night.png","Sprunki Good Night"]},
 
-    { astronaut: ["/sprunki-mod-BFDI/","/Sprunki Mod BFDI.png","Sprunki Mod BFDI"]}, 
-    { astronaut: ["/sprunki-interactive-beta/","/Sprunki Interactive Beta.png","Sprunki Interactive BETA"]},  
+    { astronaut: ["/sprunki-mod-BFDI/","/Sprunki Mod BFDI.png","Sprunki Mod BFDI"]},
+    { astronaut: ["/sprunki-interactive-beta/","/Sprunki Interactive Beta.png","Sprunki Interactive BETA"]},
     { astronaut: ["/sprunki-virus-new-update/","/Sprunki virus NEW UPDATE.png","Sprunki Virus New Update"]},
     { astronaut: ["/sprunki-eggs-mix/","/Sprunki Eggs Mix.png","Sprunki Egg's Mix"]},
     { astronaut: ["/sprunki-swapped-horror/","/Sprunki Swapped Horror.png","Sprunki Swapped Horror"]},
@@ -224,7 +232,7 @@ const { page } = Astro.props;
 <div class="pagination">
 
 <a href={page.url.prev}>«</a>
-<b class="current">{page.currentPage}</b>
+<b class="current">{page.currentPage}  / {page.lastPage} </b>
 <a href={page.url.next}>»</a>
 
 </div>

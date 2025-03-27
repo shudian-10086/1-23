@@ -8,13 +8,55 @@
   </url>
       <url>
     <loc>https://www.playfiddlebops.com/games/</loc> 
-    <lastmod>2025-03-26</lastmod>
+    <lastmod>2025-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
     <loc>https://www.playfiddlebops.com/games/2/</loc> 
     <lastmod>2025-03-25</lastmod>
     <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/incredibox-sprunksters/</loc> 
+    <lastmod>2025-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-phase-1/</loc> 
+    <lastmod>2025-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-phase-2-5/</loc> 
+    <lastmod>2025-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-phase-8/</loc> 
+    <lastmod>2025-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-babies/</loc> 
+    <lastmod>2025-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/mundo-torajo-sprunki/</loc> 
+    <lastmod>2025-03-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-minecraft/</loc> 
+    <lastmod>2025-03-27</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
       <url>
