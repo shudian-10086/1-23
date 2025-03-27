@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+DisAllow: https://www.playfiddlebops.com/de/terms-of-service
 
 
 Sitemap: https://www.playfiddlebops.com/sitemap.xml
