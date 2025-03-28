@@ -271,50 +271,6 @@ import TrendingGames from './trending-games.astro';
 
 <script defer src="https://static.addtoany.com/menu/page.js"></script>
 
-<script>
-  // Rating functionality
-    const stars = document.querySelectorAll('.star');
-    const currentRating = document.getElementById('currentRating');
-    const ratingCount = document.getElementById('ratingCount');
 
-    let ratingValue = 0;
-    let voteCount = 0;
-
-    // Function to update the rating display
-    function updateRatingDisplay() {
-        currentRating.textContent = ratingValue > 0 ? ratingValue.toFixed(1) : "Not yet rated";
-        ratingCount.textContent = voteCount;
-    }
-
-    // Function to highlight stars based on rating
-    function highlightStars(value) {
-        stars.forEach(star => {
-            star.classList.toggle('active', star.dataset.value <= value);
-        });
-    }
-
-
-        stars.forEach(star => {
-        star.addEventListener('click', function() {
-            const value = parseInt(this.dataset.value);
-
-            // Send data to server to update average rating (simulated here)
-            // **IMPORTANT: Replace this with your actual server-side code**
-            ratingValue = value;
-            voteCount++; // You'd fetch this from the server in a real implementation
-            updateRatingDisplay();
-            highlightStars(value); // Highligh clicked star value.
-         });
-
-        star.addEventListener('mouseover', function() {
-            highlightStars(this.dataset.value);
-        });
-
-        star.addEventListener('mouseout', function() {
-            highlightStars(ratingValue);
-        });
-    });
-    updateRatingDisplay()
-</script>
 </body>
 </html>

@@ -2,19 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.playfiddlebops.com/</loc> 
-    <lastmod>2025-03-26</lastmod>
+    <lastmod>2025-03-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
       <url>
     <loc>https://www.playfiddlebops.com/games/</loc> 
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-03-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
     <loc>https://www.playfiddlebops.com/games/2/</loc> 
-    <lastmod>2025-03-25</lastmod>
+    <lastmod>2025-03-28</lastmod>
     <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/ayocs-sprunkr/</loc> 
+    <lastmod>2025-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/incredibox-donki-abgerny/</loc> 
+    <lastmod>2025-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-pyramixed-version/</loc> 
+    <lastmod>2025-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-squid-remix/</loc> 
+    <lastmod>2025-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-1996/</loc> 
+    <lastmod>2025-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-rotrizi-5/</loc> 
+    <lastmod>2025-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/sprunki-parasite-parasprunki-15/</loc> 
+    <lastmod>2025-03-28</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
       <url>
