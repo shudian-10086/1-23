@@ -2,20 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.playfiddlebops.com/</loc> 
-    <lastmod>2025-03-28</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
       <url>
     <loc>https://www.playfiddlebops.com/games/</loc> 
-    <lastmod>2025-03-28</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.playfiddlebops.com/games/2/</loc> 
-    <lastmod>2025-03-28</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.playfiddlebops.com/games/3/</loc> 
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/fiddlebops-fix/</loc> 
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/fiddlebops-polos/</loc> 
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/fiddlebops-sprunksters-remix/</loc> 
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/fiddlebops-but-dandys-world/</loc> 
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/fiddlebops-sprunkbop/</loc> 
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+      <url>
+    <loc>https://www.playfiddlebops.com/fiddlebops-but-sprunki/</loc> 
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
       <url>
