@@ -9,8 +9,8 @@ import NAV from '../nav.astro';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FiddleBops - Jeu FiddleBops Incredibox en ligne gratuit</title>
-    <meta name="description" content="Créez votre musique unique avec FiddleBops ! Ce projet de fans inspiré d'Incredibox vous permet de mélanger et d'associer différents sons pour composer des morceaux personnalisés.">
+    <title>Fiddlebops - Jeu Fiddlebops Incredibox en ligne gratuit</title>
+    <meta name="description" content="Créez votre musique unique avec Fiddlebops ! Ce projet de fans inspiré d'Incredibox vous permet de mélanger et d'associer différents sons pour composer des morceaux personnalisés.">
     <meta name="robots" content="index, follow"/>
 
     <link rel="canonical" href="https://www.playfiddlebops.com/fr/"/>
@@ -26,24 +26,24 @@ import NAV from '../nav.astro';
     {
       "@context": "https://schema.org",
       "@type": "Game",
-      "name": "FiddleBops - Jeu FiddleBops Incredibox en ligne gratuit",
+      "name": "Fiddlebops - Jeu Fiddlebops Incredibox en ligne gratuit",
       "alternateName": "playfiddlebops.com",
       "url": "https://www.playfiddlebops.com/fr/",
-      "description": "Créez votre musique unique avec FiddleBops ! Ce projet de fans inspiré d'Incredibox vous permet de mélanger et d'associer différents sons pour composer des morceaux personnalisés."
+      "description": "Créez votre musique unique avec Fiddlebops ! Ce projet de fans inspiré d'Incredibox vous permet de mélanger et d'associer différents sons pour composer des morceaux personnalisés."
     }
     </script>
-    <meta property="og:title" content="FiddleBops - Jeu FiddleBops Incredibox en ligne gratuit"/>
-    <meta property="og:description" content="Créez votre musique unique avec FiddleBops ! Ce projet de fans inspiré d'Incredibox vous permet de mélanger et d'associer différents sons pour composer des morceaux personnalisés."/>
+    <meta property="og:title" content="Fiddlebops - Jeu Fiddlebops Incredibox en ligne gratuit"/>
+    <meta property="og:description" content="Créez votre musique unique avec Fiddlebops ! Ce projet de fans inspiré d'Incredibox vous permet de mélanger et d'associer différents sons pour composer des morceaux personnalisés."/>
     <meta property="og:url" content="https://www.playfiddlebops.com"/>
-    <meta property="og:site_name" content="FiddleBops"/>
+    <meta property="og:site_name" content="Fiddlebops"/>
     <meta property="og:image" content="https://www.playfiddlebops.com/tw.jpg"/>
     <meta property="og:type" content="website"/>
 
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="https://www.playfiddlebops.com"/>
-    <meta name="twitter:creator" content="FiddleBops"/>
-    <meta name="twitter:title" content="FiddleBops - Jeu FiddleBops Incredibox en ligne gratuit"/>
-    <meta name="twitter:description" content="Créez votre musique unique avec FiddleBops ! Ce projet de fans inspiré d'Incredibox vous permet de mélanger et d'associer différents sons pour composer des morceaux personnalisés."/>
+    <meta name="twitter:creator" content="Fiddlebops"/>
+    <meta name="twitter:title" content="Fiddlebops - Jeu Fiddlebops Incredibox en ligne gratuit"/>
+    <meta name="twitter:description" content="Créez votre musique unique avec Fiddlebops ! Ce projet de fans inspiré d'Incredibox vous permet de mélanger et d'associer différents sons pour composer des morceaux personnalisés."/>
     <meta name="twitter:image" content="https://www.playfiddlebops.com/tw.jpg"/>
 
     <link rel="icon" href="https://www.playfiddlebops.com/favicon.ico"/>
@@ -55,6 +55,18 @@ import NAV from '../nav.astro';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
+.video-container {
+    margin: 30px auto 0;
+    border: 3px solid var(--tertiary-dark);
+    border-radius: 4px;
+    height:400px
+}
+.video-container iframe {
+    width: 45%;
+    height: 100%;
+    float: left;
+    margin:0 30px;
+}
       audio {width:210px}
 .game-card .game-iframe-sprunki {
   float:left;
@@ -81,6 +93,15 @@ import NAV from '../nav.astro';
         audio {width: 120px}
         .game-card .game-iframe-sprunki {
      height:330px!important;
+}
+.video-container {
+    height:300px
+}
+.video-container iframe {
+    width: 94%;
+    height: 100%;
+    padding: 0px;
+    margin: 20px;
 }
 .game-info{display:none}
         }
@@ -139,8 +160,8 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
             <div class="container">
                 <div class="game-card">
                     <div class="game-info" id="paly">
-                        <h2>Bienvenue dans FiddleBops !</h2>
-                        <p>Démarrez votre voyage de création musicale ! FiddleBops est un projet de fans inspiré d'Incredibox. Ici, vous pouvez librement mélanger et associer différents sons pour créer votre propre musique unique.</p>
+                        <h2>Bienvenue dans Fiddlebops !</h2>
+                        <p>Démarrez votre voyage de création musicale ! Fiddlebops est un projet de fans inspiré d'Incredibox. Ici, vous pouvez librement mélanger et associer différents sons pour créer votre propre musique unique.</p>
                     </div>
 <PopularGames />
                    <div class="game-iframe-sprunki">
@@ -153,35 +174,172 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
             </div>
         </section>
 <TrendingGames />
-          <section class="about" id="about">
-            <div class="container">
-              <h2>Gameplay FiddleBops</h2>
-              <div class="about-content">
-                    <h3>Présentation du jeu</h3>
-                     <p>« FiddleBops » est un jeu de création musicale en ligne gratuit inspiré de la série « Incredibox », combinant interactivité et créativité, où les joueurs peuvent explorer le plaisir de la composition musicale à travers le jeu. Le jeu s'inspire du style musical du groupe de jazz gallois FiddleBop, avec des mélodies et des rythmes dynamiques au cœur de son concept.</p>
-                    <hr>
-                    <h3>Gameplay</h3>
-                      <h4>Sélection de personnages et d'effets sonores</h4>
-                        <p>Les joueurs peuvent choisir parmi plusieurs personnages et attribuer différents effets sonores aux personnages.</p>
-                     <h4>Création et expérimentation</h4>
-                         <p>En faisant glisser et en combinant des personnages et des effets sonores, les joueurs peuvent créer des œuvres musicales uniques.</p>
-                     <h4>Déblocage de nouveau contenu</h4>
-                         <p>Au fur et à mesure que le jeu progresse, les joueurs peuvent débloquer de nouveaux personnages, effets sonores et instruments, enrichissant ainsi leurs créations.</p>
-                     <h4>Interaction communautaire</h4>
-                         <p>Les joueurs peuvent partager leurs œuvres avec la communauté et échanger des conseils créatifs avec d'autres joueurs.</p>
-                    <hr>
-                  <h3>Avantages du jeu</h3>
-                      <ul>
-                       <li>Amélioration de la créativité : Grâce à la création musicale, les joueurs peuvent développer leur sens du rythme et leurs compétences en composition musicale.</li>
-                        <li>Interaction sociale : Le jeu fournit une communauté dynamique où les joueurs peuvent interagir avec d'autres passionnés de musique.</li>
-                        <li>Mises à jour continues : Le jeu ajoutera régulièrement de nouveaux contenus, ce qui permettra de maintenir l'expérience des joueurs au frais.</li>
-                   </ul>
-                 </div>
-            </div>
-        </section>
+<section class="about" id="about">
+  <div class="container">
+    <h2>À propos de Fiddlebops Incredibox</h2>
+    <div class="about-content">
+      <h3>I. Informations de base et gameplay de Fiddlebops</h3>
+      <p>
+        <strong>Nom du jeu :</strong> Fiddlebops
+      </p>
+      <p>
+        <strong>Genre/Tags :</strong> Création musicale, Rythme, Expérimental, Éducatif, Familial, Occasionnel, Solo, Créatif
+      </p>
+      <p>
+        <strong>Plateforme :</strong> Web (Navigateur)
+      </p>
+      <p>
+        <strong>Date de sortie :</strong> Environ le 7 novembre 2024
+      </p>
+      <p>
+        <strong>Prix/Accès :</strong> Gratuit
+      </p>
+      <hr />
+      <h4>1. Mécanismes de création</h4>
+      <ul>
+        <li>
+          <strong>Mécanisme principal :</strong> Sélectionnez de mignons personnages Fiddlebops, chacun représentant un son d'instrument ou un élément musical unique. Combinez les sons en faisant glisser et en déposant les personnages sur des emplacements de performance ou une timeline.
+        </li>
+        <li>
+          <strong>Combinaison de sons :</strong> Combinez plusieurs personnages Fiddlebops pour créer une musique multicouche. Différentes combinaisons produisent des textures musicales variées.
+        </li>
+        <li>
+          <strong>Rythme et timing :</strong> Utilise probablement un placement basé sur une grille ou une timeline simple pour contrôler le timing et le rythme des sons.
+        </li>
+        <li>
+          <strong>Boucle et répétition :</strong> Peut inclure des mécanismes pour lire les sons en boucle afin de créer des phrases musicales répétitives.
+        </li>
+        <li>
+          <strong>Exploration et expérimentation :</strong> Encourage l'exploration libre des combinaisons de sons, en mettant l'accent sur le plaisir de la création.
+        </li>
+      </ul>
+      <hr />
+      <h3>II. Modding et contenu communautaire de Fiddlebops</h3>
+
+      <h4>1. Aperçu des mods de jeu populaires</h4>
+      <ul>
+        <li>
+          <a href="/fiddlebops-but-sprunki/">Fiddlebops but Sprunki</a>
+        </li>
+        <li>
+          <a href="/fiddlebops-fix/">Fiddlebops Fix</a>
+        </li>
+        <li>
+          <a href="/fiddlebops-polos/">Fiddlebops Polos</a>
+        </li>
+        <li>
+          <a href="/fiddlebops-but-dandys-world/">Fiddlebops But Dandy's World</a>
+        </li>
+      </ul>
+
+      <h4>2. Présentation des personnages et créations de la communauté</h4>
+      <ul>
+        <li>
+          <strong>Présentation des personnages :</strong> Les Fiddlebops sont un groupe de personnages de dessins animés mignons et colorés, chacun lié à un son/instrument spécifique.
+          <ul>
+            <li>
+              <em>Personnages de type batteur :</em> Fournissent des sections rythmiques.
+            </li>
+            <li>
+              <em>Personnages de type mélodiste :</em> Offrent des sons comme des flûtes, des claviers ou des leads de synthé.
+            </li>
+            <li>
+              <em>Personnages de type accords :</em> Fournissent des harmonies de fond ou des lignes de basse.
+            </li>
+            <li>
+              <em>Personnages de type effets sonores :</em> Émettent des sons d'effets spéciaux ou des échantillons vocaux.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Créations de la communauté :</strong> Implique principalement les joueurs qui créent et partagent leurs morceaux de musique créés avec "Fiddlebops". Ceux-ci sont partagés sur des plateformes telles que les sections de commentaires itch / scratch, les forums et les médias sociaux (YouTube, TikTok, Twitter avec le hashtag #Fiddlebops).
+        </li>
+      </ul>
+      <hr />
+      <h3>III. Comment jouer à Fiddlebops</h3>
+
+      <h4>1. Sélection des personnages</h4>
+      <ul>
+        <li>
+          Les joueurs choisissent parmi une bibliothèque de personnages Fiddlebops, chacun ayant une apparence et un son uniques.
+        </li>
+        <li>
+          Des aperçus sonores peuvent être disponibles lorsque vous cliquez ou faites glisser un personnage.
+        </li>
+      </ul>
+
+      <h4>2. Combinaison de sons</h4>
+      <ul>
+        <li>
+          Les joueurs font glisser et déposent les Fiddlebops sélectionnés sur les zones désignées de l'interface du jeu.
+        </li>
+        <li>
+          Plusieurs Fiddlebops peuvent être placés simultanément pour jouer des sons simultanément.
+        </li>
+      </ul>
+
+      <h4>3. Mixage et création</h4>
+      <ul>
+        <li>
+          Les joueurs modifient la structure musicale, le rythme et la mélodie en ajustant le placement et la quantité de Fiddlebops.
+        </li>
+        <li>
+          Le jeu peut offrir des contrôles simples (par exemple, réglage du volume), mais se concentre sur le plaisir de la combinaison.
+        </li>
+      </ul>
+
+      <h4>4. Partage des créations</h4>
+      <ul>
+        <li>
+          Le jeu lui-même peut ne pas avoir de fonctionnalités d'enregistrement/partage intégrées.
+        </li>
+        <li>
+          Les joueurs utilisent généralement un logiciel d'enregistrement d'écran tiers pour capturer leurs créations et les partager sur diverses plateformes en ligne.
+        </li>
+      </ul>
+      <hr />
+      <h3>IV. Caractéristiques de Fiddlebops</h3>
+      <ul>
+        <li>
+          <strong>Intuitif et accessible :</strong> Conçu pour tous les âges, en particulier les débutants, avec des commandes simples.
+        </li>
+        <li>
+          <strong>Encourage la créativité :</strong> Une plateforme d'expérimentation sonore libre.
+        </li>
+        <li>
+          <strong>Style visuel mignon et unique :</strong> Couleurs vives avec des designs de personnages adorables.
+        </li>
+        <li>
+          <strong>Expérience musicale expérimentale :</strong> Découvrez des combinaisons sonores inattendues.
+        </li>
+        <li>
+          <strong>Valeur éducative :</strong> Présente les éléments musicaux de base de manière ludique.
+        </li>
+        <li>
+          <strong>Création sans stress :</strong> Pas de conditions de victoire ou de défaite ni de notation.
+        </li>
+        <li>
+          <strong>Gratuit ou prix personnalisé :</strong> Faible barrière à l'entrée.
+        </li>
+      </ul>
+      <hr />
+      <h3>V. Téléchargement et expérience de Fiddlebops</h3>
+      <ul>
+        <li>
+          <strong>Plateforme principale :</strong>
+          <a href="https://www.playfiddlebops.com/">playfiddlebops.com</a>
+          ou itch et scratch.
+        </li>
+        <li>
+          <strong>Recommandations d'expérience :</strong> Essayez d'abord la version Web; téléchargez la version de bureau pour une expérience plus fluide/hors ligne.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
         <section class="games">
           <div class="container">
-            <h2>Explorez les différents sons dans FiddleBops</h2>
+            <h2>Explorez les différents sons dans Fiddlebops</h2>
                  <div class="game-grid">
                    <div class="game">
                         <div class="game-logo">
@@ -257,55 +415,33 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
           </div>
 
         </section>
-          <section class="about" id="about">
+
+          <section class="game-video about">
             <div class="container">
-              <h2>À propos du projet de jeu FiddleBops</h2>
-              <div class="about-content">
-                    <h3>Présentation du jeu</h3>
-                     <p>« FiddleBops » est un jeu de création musicale en ligne gratuit inspiré de la série « Incredibox », combinant interactivité et créativité, où les joueurs peuvent explorer le plaisir de la composition musicale à travers le jeu. Le jeu s'inspire du style musical du groupe de jazz gallois FiddleBop, avec des mélodies et des rythmes dynamiques au cœur de son concept.</p>
-                    <hr>
-
-                    <h3>Caractéristiques du jeu</h3>
-                    <h4>Système de personnages unique</h4>
-                     <p>Le jeu propose une série de personnages avec des personnalités et des effets sonores uniques, et les joueurs peuvent combiner ces personnages selon leur créativité pour créer de la musique.</p>
-                     <h4>Fonctionnalités de création musicale riches</h4>
-                        <ul>
-                            <li>Les joueurs peuvent construire de la musique en faisant glisser et en déposant des icônes de personnages et d'effets sonores.</li>
-                            <li>Une riche bibliothèque de sons est fournie, comprenant du jazz, de la pop et de la musique électronique, entre autres styles.</li>
-                           <li>Prend en charge le réglage de la hauteur, la superposition d'effets sonores et le déblocage d'animations spéciales.</li>
-                        </ul>
-                   <h4>Fonctions d'interactivité et communautaires</h4>
-                        <ul>
-                           <li>Les joueurs peuvent enregistrer et partager leurs créations musicales et communiquer avec d'autres joueurs.</li>
-                            <li>Le jeu propose des activités et des défis communautaires auxquels les joueurs peuvent participer pour acquérir de nouveaux personnages et effets sonores.</li>
-                        </ul>
-                     <h4>Jeu gratuit et prise en charge multiplateforme</h4>
-                       <p>Le jeu est entièrement gratuit et prend en charge le jeu en ligne sans qu'il soit nécessaire de le télécharger. Certaines fonctions (telles que le mode hors ligne) peuvent être utilisées sans connexion réseau.</p>
-
-                    <h4>Convient à tous les âges</h4>
-                         <p>Le jeu est conçu pour être simple et facile à utiliser, convenant aussi bien aux débutants qu'aux passionnés de musique professionnelle.</p>
-                     <hr>
-
-                  <h3>Résumé</h3>
-                   <p>« FiddleBops » est un jeu qui combine la création musicale et les expériences interactives, adapté à tous les joueurs qui aiment la musique. Qu'il s'agisse de simples défis de rythme ou de créations musicales complexes, il peut répondre aux besoins des joueurs.</p>
-                 </div>
+              <h2>Fiddlebops Incredibox Game Video</h2>
+            <div class="video-container">
+                 <iframe src="https://www.youtube.com/embed/4Oj-dVLSA70" title="Fiddlebops ALL POLOS 4K (WITH SUBTITLES)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                 <iframe src="https://www.youtube.com/embed/JlMa-fRBOwE" title="Every Incredibox Fiddlebops in 8 Minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
+<div style="clear:both"></div>
             </div>
+            </div>
+<div style="clear:both"></div>
         </section>
-
+<div style="clear:both"></div>
           <section class="about" id="faq">
             <div class="container">
-              <h2>Foire aux questions sur le jeu FiddleBops</h2>
+              <h2>Foire aux questions sur le jeu Fiddlebops</h2>
               <div class="about-content">
-                  <h3>Qu'est-ce que le jeu FiddleBops ?</h3>
+                  <h3>Qu'est-ce que le jeu Fiddlebops ?</h3>
                      <p>
-                       Le jeu FiddleBops est un projet de fans inspiré d'Incredibox. Ici, vous pouvez expérimenter le plaisir de mixer des sons et de créer des pièces musicales uniques grâce à une interface intuitive.
+                       Le jeu Fiddlebops est un projet de fans inspiré d'Incredibox. Ici, vous pouvez expérimenter le plaisir de mixer des sons et de créer des pièces musicales uniques grâce à une interface intuitive.
                     </p>
                  </div>
 
                  <div class="about-content">
-                   <h3>Le jeu FiddleBops est-il gratuit ?</h3>
+                   <h3>Le jeu Fiddlebops est-il gratuit ?</h3>
                     <p>
-                      Oui, le jeu FiddleBops est entièrement gratuit, et les joueurs peuvent jouer en ligne sans téléchargement.
+                      Oui, le jeu Fiddlebops est entièrement gratuit, et les joueurs peuvent jouer en ligne sans téléchargement.
                      </p>
                  </div>
 
@@ -317,7 +453,7 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
                   </div>
 
                   <div class="about-content">
-                   <h3>Comment puis-je commencer à créer de la musique dans le jeu FiddleBops ?</h3>
+                   <h3>Comment puis-je commencer à créer de la musique dans le jeu Fiddlebops ?</h3>
                       <p>
                         Les joueurs peuvent commencer par faire glisser des personnages sur la scène, en combinant leurs sons uniques en une pièce musicale. Expérimenter différentes combinaisons de personnages peut débloquer des mélodies cachées et du contenu bonus.
                      </p>
@@ -326,7 +462,7 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
                   <div class="about-content">
                    <h3>Le jeu convient-il aux passionnés de musique ?</h3>
                      <p>
-                        Absolument ! « FiddleBops » fournit une plateforme pleine de créativité et de plaisir pour les passionnés de musique.
+                        Absolument ! « Fiddlebops » fournit une plateforme pleine de créativité et de plaisir pour les passionnés de musique.
                      </p>
                   </div>
 
@@ -350,7 +486,7 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
                   <li><a href="/fr/terms-of-service/">Conditions d'utilisation</a></li>
                 </ul>
            </nav>
-           <p class="copyright">© 2025 FiddleBops. Tous droits réservés.</p>
+           <p class="copyright">© 2025 Fiddlebops. All rights reserved.</p>
       </div>
     </footer>
     <script>
