@@ -1,0 +1,392 @@
+/**
+ * 现代化CSS变量系统 - 2024潮流版
+ * 为FiddleBops网站提供全新的视觉设计基础
+ * 无需保持原有品牌色系，追求最新的设计趋势
+ */
+
+:root {
+  /* ========================================
+     2024年度主色调系统 - 霓虹渐变
+  ======================================== */
+  
+  /* 主色调 - 现代霓虹渐变 */
+  --primary-neon: #00f5ff;         /* 电光蓝 - 科技感主色 */
+  --primary-purple: #8b5cf6;       /* 现代紫 - 创意感 */
+  --primary-pink: #ec4899;         /* 霓虹粉 - 活力感 */
+  --primary-green: #10b981;        /* 霓虹绿 - 成功感 */
+  
+  /* 主要渐变背景 */
+  --primary-gradient: linear-gradient(135deg, var(--primary-neon) 0%, var(--primary-purple) 50%, var(--primary-pink) 100%);
+  --primary-gradient-vertical: linear-gradient(180deg, var(--primary-neon) 0%, var(--primary-purple) 100%);
+  --primary-gradient-radial: radial-gradient(circle, var(--primary-purple) 0%, var(--primary-neon) 100%);
+  
+  /* 主色调的透明度变体 */
+  --primary-neon-10: rgba(0, 245, 255, 0.1);
+  --primary-neon-20: rgba(0, 245, 255, 0.2);
+  --primary-neon-30: rgba(0, 245, 255, 0.3);
+  --primary-purple-10: rgba(139, 92, 246, 0.1);
+  --primary-purple-20: rgba(139, 92, 246, 0.2);
+  --primary-purple-30: rgba(139, 92, 246, 0.3);
+  --primary-pink-10: rgba(236, 72, 153, 0.1);
+  --primary-pink-20: rgba(236, 72, 153, 0.2);
+  --primary-pink-30: rgba(236, 72, 153, 0.3);
+
+  /* ========================================
+     深色模式和浅色模式背景系统
+  ======================================== */
+  
+  /* 深色模式背景 */
+  --dark-bg-primary: #0a0a0f;      /* 深邃黑 */
+  --dark-bg-secondary: #1a1a2e;    /* 深蓝灰 */
+  --dark-bg-card: #16213e;         /* 卡片深蓝 */
+  --dark-bg-elevated: #1f2937;     /* 提升层深色 */
+  
+  /* 浅色模式背景 */
+  --light-bg-primary: #fafaff;     /* 极简白 */
+  --light-bg-secondary: #f1f5ff;   /* 浅蓝白 */
+  --light-bg-card: #ffffff;        /* 纯白卡片 */
+  --light-bg-elevated: #f8fafc;    /* 提升层浅色 */
+  
+  /* 默认使用浅色模式 */
+  --bg-primary: var(--light-bg-primary);
+  --bg-secondary: var(--light-bg-secondary);
+  --bg-card: var(--light-bg-card);
+  --bg-elevated: var(--light-bg-elevated);
+
+  /* ========================================
+     音乐可视化专用色彩系统
+  ======================================== */
+  
+  /* 音乐元素色彩 - 基于音频频率 */
+  --beat-neon: #ff0080;            /* 节拍霓虹粉 */
+  --melody-cyan: #00ffff;          /* 旋律青色 */
+  --harmony-purple: #9945ff;       /* 和声紫 */
+  --bass-orange: #ff6b35;          /* 低音橙 */
+  --vocal-yellow: #ffd700;         /* 人声金色 */
+  
+  /* 音频频谱色彩 */
+  --freq-low: #ff006e;             /* 低频 - 深粉 */
+  --freq-mid: #00f5ff;             /* 中频 - 蓝青 */
+  --freq-high: #ffbe0b;            /* 高频 - 明黄 */
+  
+  /* 音乐可视化渐变 */
+  --music-wave-1: linear-gradient(45deg, var(--freq-low), var(--beat-neon));
+  --music-wave-2: linear-gradient(45deg, var(--freq-mid), var(--melody-cyan));
+  --music-wave-3: linear-gradient(45deg, var(--freq-high), var(--vocal-yellow));
+  --music-spectrum: linear-gradient(90deg, var(--freq-low) 0%, var(--freq-mid) 50%, var(--freq-high) 100%);
+
+  /* ========================================
+     现代中性色系 - 精确灰度阶梯
+  ======================================== */
+  
+  --neutral-0: #ffffff;
+  --neutral-50: #f8fafc;
+  --neutral-100: #f1f5f9;
+  --neutral-200: #e2e8f0;
+  --neutral-300: #cbd5e1;
+  --neutral-400: #94a3b8;
+  --neutral-500: #64748b;
+  --neutral-600: #475569;
+  --neutral-700: #334155;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+  --neutral-950: #020617;
+  
+  /* 文字色彩映射 */
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-600);
+  --text-tertiary: var(--neutral-500);
+  --text-inverse: var(--neutral-0);
+  --text-muted: var(--neutral-400);
+
+  /* ========================================
+     功能色彩系统
+  ======================================== */
+  
+  --success-modern: #10b981;       /* 现代绿 */
+  --success-bg: rgba(16, 185, 129, 0.1);
+  --warning-modern: #f59e0b;       /* 现代橙 */
+  --warning-bg: rgba(245, 158, 11, 0.1);
+  --error-modern: #ef4444;         /* 现代红 */
+  --error-bg: rgba(239, 68, 68, 0.1);
+  --info-modern: var(--primary-neon);
+  --info-bg: var(--primary-neon-10);
+
+  /* ========================================
+     2024流行效果系统
+  ======================================== */
+  
+  /* 玻璃拟态效果 */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-bg-strong: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-border-strong: rgba(255, 255, 255, 0.25);
+  --glass-blur: blur(20px);
+  --glass-blur-strong: blur(40px);
+  
+  /* 新拟态效果 */
+  --neumorphism-light: rgba(255, 255, 255, 0.8);
+  --neumorphism-dark: rgba(0, 0, 0, 0.1);
+  --neumorphism-shadow: 
+    20px 20px 60px var(--neumorphism-dark),
+    -20px -20px 60px var(--neumorphism-light);
+  
+  /* 霓虹发光效果 */
+  --glow-neon: 0 0 20px var(--primary-neon-30);
+  --glow-purple: 0 0 20px var(--primary-purple-30);
+  --glow-pink: 0 0 20px var(--primary-pink-30);
+  --glow-strong-neon: 0 0 40px var(--primary-neon-30);
+
+  /* ========================================
+     现代阴影系统 - 分层设计
+  ======================================== */
+  
+  /* 标准阴影等级 */
+  --shadow-elevation-1: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-elevation-2: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-elevation-3: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-elevation-4: 0 16px 64px rgba(0, 0, 0, 0.16);
+  --shadow-elevation-5: 0 24px 80px rgba(0, 0, 0, 0.20);
+  
+  /* 霓虹发光阴影 */
+  --shadow-glow-neon: 0 0 20px rgba(0, 245, 255, 0.3);
+  --shadow-glow-purple: 0 0 20px rgba(139, 92, 246, 0.3);
+  --shadow-glow-pink: 0 0 20px rgba(236, 72, 153, 0.3);
+  --shadow-glow-music: 0 8px 32px rgba(255, 0, 128, 0.2);
+  
+  /* 组合阴影效果 */
+  --shadow-card-hover: 
+    var(--shadow-elevation-3),
+    var(--shadow-glow-purple);
+  --shadow-button-hover:
+    var(--shadow-elevation-2),
+    var(--shadow-glow-neon);
+
+  /* ========================================
+     现代化圆角系统
+  ======================================== */
+  
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-3xl: 48px;
+  --radius-full: 9999px;
+  
+  /* 特殊用途圆角 */
+  --radius-game-card: var(--radius-2xl);
+  --radius-button: var(--radius-lg);
+  --radius-input: var(--radius-md);
+  --radius-avatar: var(--radius-full);
+
+  /* ========================================
+     间距系统 - 8px基准
+  ======================================== */
+  
+  --space-0: 0;
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+
+  /* ========================================
+     现代动画系统
+  ======================================== */
+  
+  /* 时间曲线 */
+  --transition-instant: 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slower: 0.75s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* 特殊动画曲线 */
+  --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-elastic: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-back: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* 音乐主题动画时长 */
+  --animation-beat: 1.5s;
+  --animation-wave: 3s;
+  --animation-pulse: 2s;
+  --animation-float: 6s;
+
+  /* ========================================
+     字体系统
+  ======================================== */
+  
+  /* 字体族 */
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
+  
+  /* 字体权重 */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  /* 字体大小 - 渐进式缩放 */
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;    /* 18px */
+  --font-size-xl: 1.25rem;     /* 20px */
+  --font-size-2xl: 1.5rem;     /* 24px */
+  --font-size-3xl: 1.875rem;   /* 30px */
+  --font-size-4xl: 2.25rem;    /* 36px */
+  --font-size-5xl: 3rem;       /* 48px */
+  --font-size-6xl: 3.75rem;    /* 60px */
+  
+  /* 行高 */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ========================================
+     Z-Index 分层系统
+  ======================================== */
+  
+  --z-index-base: 0;
+  --z-index-docked: 10;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-banner: 1030;
+  --z-index-overlay: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  --z-index-toast: 1080;
+
+  /* ========================================
+     断点系统 - 响应式设计
+  ======================================== */
+  
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* ========================================
+     音乐游戏专用变量
+  ======================================== */
+  
+  /* 游戏卡片尺寸 */
+  --game-card-width: 350px;
+  --game-card-height: 400px;
+  --game-preview-height: 240px;
+  
+  /* 音频可视化参数 */
+  --spectrum-bar-width: 6px;
+  --spectrum-bar-gap: 4px;
+  --spectrum-height: 60px;
+  
+  /* 播放按钮 */
+  --play-button-size: 80px;
+  --play-button-mobile: 60px;
+  
+  /* 容器最大宽度 */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1400px;
+}
+
+/* ========================================
+   深色模式支持
+======================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: var(--dark-bg-primary);
+    --bg-secondary: var(--dark-bg-secondary);
+    --bg-card: var(--dark-bg-card);
+    --bg-elevated: var(--dark-bg-elevated);
+    
+    --text-primary: var(--neutral-0);
+    --text-secondary: var(--neutral-300);
+    --text-tertiary: var(--neutral-400);
+    --text-inverse: var(--neutral-900);
+    --text-muted: var(--neutral-500);
+    
+    /* 深色模式下的玻璃效果调整 */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-bg-strong: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border-strong: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* ========================================
+   实用工具类
+======================================== */
+
+/* 隐藏元素 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* GPU 加速 */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* 平滑滚动 */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* 现代化渐变文字 */
+.gradient-text {
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* 玻璃拟态容器 */
+.glass-container {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+}
+
+/* 霓虹发光效果 */
+.neon-glow {
+  box-shadow: var(--shadow-glow-neon);
+  transition: box-shadow var(--transition-normal);
+}
+
+.neon-glow:hover {
+  box-shadow: var(--glow-strong-neon);
+}

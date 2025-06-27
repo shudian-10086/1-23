@@ -1,0 +1,217 @@
+---
+import Header from '../components/Header.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  lang?: string;
+  canonicalUrl?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogUrl?: string;
+  ogImage?: string;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  twitterImage?: string;
+  jsonLd?: object;
+  customStyles?: string;
+  customScripts?: string;
+}
+
+const {
+  title,
+  description,
+  lang = 'en',
+  canonicalUrl,
+  ogTitle = title,
+  ogDescription = description,
+  ogUrl = canonicalUrl,
+  ogImage = 'https://www.playfiddlebops.com/tw.jpg',
+  twitterTitle = title,
+  twitterDescription = description,
+  twitterImage = ogImage,
+  jsonLd,
+  customStyles = '',
+  customScripts = ''
+} = Astro.props;
+
+const baseUrl = 'https://www.playfiddlebops.com';
+const hreflangLinks = [
+  { lang: 'x-default', url: `${baseUrl}/` },
+  { lang: 'en', url: `${baseUrl}/` },
+  { lang: 'zh-CN', url: `${baseUrl}/zh/` },
+  { lang: 'de', url: `${baseUrl}/de/` },
+  { lang: 'fr', url: `${baseUrl}/fr/` },
+  { lang: 'es', url: `${baseUrl}/es/` },
+  { lang: 'ja', url: `${baseUrl}/ja/` },
+  { lang: 'ko', url: `${baseUrl}/ko/` }
+];
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    <meta name="robots" content="index, follow"/>
+    
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    
+    {hreflangLinks.map(({ lang: hrefLang, url }) => (
+        <link rel="alternate" hreflang={hrefLang} href={url} />
+    ))}
+    
+    {jsonLd && (
+        <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+    )}
+    
+    <meta property="og:title" content={ogTitle}/>
+    <meta property="og:description" content={ogDescription}/>
+    <meta property="og:url" content={ogUrl}/>
+    <meta property="og:site_name" content="FiddleBops"/>
+    <meta property="og:locale" content={lang === 'zh-CN' ? 'zh_CN' : `${lang}_${lang.toUpperCase()}`}/>
+    <meta property="og:image" content={ogImage}/>
+    <meta property="og:type" content="website"/>
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="https://www.playfiddlebops.com"/>
+    <meta name="twitter:title" content={twitterTitle}/>
+    <meta name="twitter:description" content={twitterDescription}/>
+    <meta name="twitter:image" content={twitterImage}/>
+
+    <link rel="icon" href="https://www.playfiddlebops.com/favicon.ico"/>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/src/styles/global.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    <link rel="stylesheet" href="/src/styles/modern-variables.css">
+    <link rel="stylesheet" href="/src/styles/modern-game-cards.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    {customStyles && <style set:html={customStyles}></style>}
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+    
+      navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+      });
+
+    });
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JME3P55QJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9JME3P55QJ');
+    </script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1444054360166733" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-1444054360166733">
+
+    {customScripts && <Fragment set:html={customScripts} />}
+</head>
+<body>
+    <Header lang={lang} currentPath={Astro.url.pathname} />
+
+    <main>
+        <slot />
+    </main>
+
+    <footer>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/terms-of-service/">Terms of service</a></li>
+                </ul>
+            </nav>
+            <p class="copyright" style="text-align: left;">© 2025 Fiddlebops. All rights reserved.</p>
+            <p style="text-align: left;margin-top:0">E-mail: chongzhidatech@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+      function goToLink(event) {
+        const select = event.target;
+        const selectedOption = select.options[select.selectedIndex];
+        const url = selectedOption.getAttribute('data-url');
+        if (url) {
+          window.location.href = url;
+        }
+      }
+  
+      document.addEventListener('DOMContentLoaded', () => {
+        const select = document.querySelector('select');
+        if (select) {
+          select.addEventListener('change', goToLink);
+  
+          const htmlLang = document.documentElement.lang;
+          const options = Array.from(select.options);
+  
+          const currentOption = options.find(option =>
+            option.getAttribute('data-lang') === htmlLang
+          );
+  
+          if (currentOption) {
+            currentOption.selected = true;
+          } else {
+            let defaultOption = options.find(option =>
+              option.getAttribute('data-lang') === 'en'
+            );
+  
+            if (!defaultOption) {
+              defaultOption = options.find(option =>
+                option.getAttribute('data-lang') === '/'
+              );
+            }
+  
+            if (defaultOption) {
+              defaultOption.selected = true;
+            }
+          }
+        }
+      });
+    </script>
+
+    <!-- AddToAny Social Share -->
+    <style>
+    @media screen and (max-width: 980px) {
+        .a2a_floating_style.a2a_vertical_style { display: none; }
+    }
+    @media screen and (min-width: 980px) {
+        .a2a_floating_style.a2a_default_style { display: none; }
+    }
+    </style>
+    <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" data-a2a-scroll-show="0,60" style="bottom:0px; right:0px;">
+        <a class="a2a_button_x"></a>
+        <a class="a2a_button_reddit"></a>
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_telegram"></a>
+        <a class="a2a_button_whatsapp"></a>
+        <a class="a2a_button_linkedin"></a>
+        <a class="a2a_dd" href="https://www.playfiddlebops.com/"></a>
+    </div>
+    <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="left:0px; top:150px;">
+        <a class="a2a_button_x"></a>
+        <a class="a2a_button_reddit"></a>
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_telegram"></a>
+        <a class="a2a_button_whatsapp"></a>
+        <a class="a2a_button_linkedin"></a>
+        <a class="a2a_dd" href="https://www.playfiddlebops.com/"></a>
+    </div>
+    <script defer src="https://static.addtoany.com/menu/page.js"></script>
+</body>
+</html>

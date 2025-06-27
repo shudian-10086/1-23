@@ -1,0 +1,32 @@
+Astro项目开发 - Islands Architecture，中文回复，英文变量名
+
+目录结构：src/pages + src/components + src/layouts + src/lib
+内容：src/content (Collections)，需要时再细分
+
+Islands原则：
+- 默认静态HTML，选择性hydration
+- client:load (立即) client:idle (空闲) client:visible (可见)
+- client:only (纯客户端) 按需选择
+
+组件策略：
+- .astro文件优先，框架组件按需
+- 多框架混用：React, Vue, Svelte等
+- 20行内不强制拆分
+
+状态管理：nano stores跨Islands，本地用框架原生状态
+
+内容管理：Content Collections本地，Content Layer API远程
+
+样式：Scoped CSS优先，支持TailwindCSS和CSS Modules
+
+数据获取：静态生成优先，SSR按需，客户端fetch最少
+
+表单：简单用原生HTML，复杂用框架组件 + 验证
+
+必须处理：性能优化、SEO友好、错误边界
+
+开发顺序：静态结构 → 选择性交互 → 内容管理 → 优化
+
+避免：过度hydration、传统SPA模式、重型状态管理
+
+记住：静态优先，JavaScript按需，性能胜过完美

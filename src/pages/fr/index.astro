@@ -54,58 +54,6 @@ import NAV from '../nav.astro';
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-.video-container {
-    margin: 30px auto 0;
-    border: 3px solid var(--tertiary-dark);
-    border-radius: 4px;
-    height:400px
-}
-.video-container iframe {
-    width: 45%;
-    height: 100%;
-    float: left;
-    margin:0 30px;
-}
-      audio {width:210px}
-.game-card .game-iframe-sprunki {
-  float:left;
-    width: 69%;
-    margin:0;
-    padding:0;
-     height:600px;
-     background-color:#fff;
-     position: relative;
-     background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(/tw.jpg);
-     background-repeat: no-repeat;
-     background-position: center center;
-     background-size:cover;
-}
-      .game .game-l-2 img {
-    width: 100%!important;
-    height:auto;
-    margin: 0 auto;}
-      @media screen and (max-width: 980px){
-        .game-card .game-iframe-sprunki {
-     width:100%;}
-      }
-      @media screen and (max-width: 768px){
-        audio {width: 120px}
-        .game-card .game-iframe-sprunki {
-     height:330px!important;
-}
-.video-container {
-    height:300px
-}
-.video-container iframe {
-    width: 94%;
-    height: 100%;
-    padding: 0px;
-    margin: 20px;
-}
-.game-info{display:none}
-        }
-    </style>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
       const navToggle = document.querySelector('.nav-toggle');
@@ -118,8 +66,23 @@ import NAV from '../nav.astro';
     });
     </script>
     <script>
-eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[0-7]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('let 2=false;3 0=4.5("6-0");3 1=4.5("1");function 7(){0.src="https://6.netlify.app/";1.style.display="none";2=true;0.focus()}1.addEventListener("click",7);',[],8,'iframe|playButton|iframeLoaded|const|document|getElementById|fiddlebops|loadIframe'.split('|'),0,{}))
-    </script>
+document.addEventListener('DOMContentLoaded', function() {
+    let iframeLoaded = false;
+    const iframe = document.getElementById("fiddlebops-iframe");
+    const playButton = document.getElementById("playButton");
+    
+    function loadIframe() {
+        iframe.src = "https://fiddlebops.netlify.app/";
+        playButton.style.display = "none";
+        iframeLoaded = true;
+        iframe.focus();
+    }
+    
+    if (playButton) {
+        playButton.addEventListener("click", loadIframe);
+    }
+});
+</script>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9JME3P55QJ"></script>
 <script>
@@ -539,15 +502,7 @@ eval(function(p,a,c,k,e,r){e=String;if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[
         }
       });
       </script>
-<style>
-/* Hide AddToAny vertical share bar when screen is less than 981 pixels wide */
-@media screen and (max-width: 980px) {
-    .a2a_floating_style.a2a_vertical_style { display: none; }
-}
-@media screen and (min-width: 980px) {
-    .a2a_floating_style.a2a_default_style { display: none; }
-}
-</style>
+
 <div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_default_style" data-a2a-scroll-show="0,60" style="bottom:0px; right:0px;">
 
 <a class="a2a_button_x"></a>

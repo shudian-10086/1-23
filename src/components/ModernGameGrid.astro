@@ -1,0 +1,292 @@
+---
+// 现代化游戏网格组件
+import ModernGameCard from './ModernGameCard.astro';
+import type { GameItem } from '../data/games.ts';
+import { getTranslation } from '../data/i18n.ts';
+
+interface Props {
+  games: GameItem[];
+  title: string;
+  variant?: 'grid' | 'list';
+  showBadges?: boolean;
+  badgeType?: 'new' | 'popular' | 'trending';
+  lang?: string;
+  maxItems?: number;
+  showMoreLink?: boolean;
+  moreLink?: string;
+  className?: string;
+}
+
+const { 
+  games, 
+  title,
+  variant = 'grid',
+  showBadges = false,
+  badgeType = 'new',
+  lang = 'en',
+  maxItems,
+  showMoreLink = false,
+  moreLink = '/games/',
+  className = ''
+} = Astro.props;
+
+const t = (key: string) => getTranslation(lang, key);
+const displayGames = maxItems ? games.slice(0, maxItems) : games;
+
+const gridClasses = [
+  variant === 'grid' ? 'modern-game-grid' : 'modern-game-list',
+  className
+].filter(Boolean).join(' ');
+---
+
+<section class="modern-games-section">
+  <div class="games-container">
+    <h2 class="section-title">{title}</h2>
+    <div class={gridClasses}>
+      {displayGames.map((game, index) => (
+        <ModernGameCard 
+          game={game}
+          variant={variant === 'list' ? 'compact' : 'default'}
+          showBadge={showBadges && index < 3}
+          badgeType={badgeType}
+        />
+      ))}
+    </div>
+    
+    {showMoreLink && (
+      <div class="more-games-container">
+        <a href={moreLink} class="modern-more-button">
+          <span>{t('common.moreGames')}</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7.5 5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+.modern-games-section {
+  padding: var(--space-16) 0;
+  background: transparent;
+  position: relative;
+}
+
+/* 添加微妙的背景渐变 */
+.modern-games-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 245, 255, 0.02) 0%,
+    rgba(139, 92, 246, 0.02) 50%,
+    rgba(236, 72, 153, 0.02) 100%
+  );
+  pointer-events: none;
+}
+
+.games-container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  position: relative;
+  z-index: 1;
+}
+
+/* 现代化标题样式 */
+.section-title {
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-extrabold);
+  margin-bottom: var(--space-12);
+  color: var(--text-primary);
+  position: relative;
+  
+  /* 霓虹渐变文字效果 */
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift var(--animation-wave) ease-in-out infinite;
+  
+  /* 文字阴影效果 */
+  filter: drop-shadow(0 4px 8px rgba(0, 245, 255, 0.1));
+}
+
+/* 标题下方装饰线 */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--primary-gradient);
+  border-radius: var(--radius-full);
+  background-size: 200% 200%;
+  animation: gradient-shift var(--animation-pulse) ease-in-out infinite;
+}
+
+/* 现代化"更多游戏"按钮 */
+.more-games-container {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-12);
+}
+
+.modern-more-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  
+  /* 玻璃拟态效果 */
+  background: var(--glass-bg-strong);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  
+  /* 样式 */
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  
+  /* 尺寸和形状 */
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-full);
+  
+  /* 过渡效果 */
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  
+  /* GPU加速 */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* 按钮悬浮效果 */
+.modern-more-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-neon);
+  border-color: var(--glass-border-strong);
+  background: var(--primary-gradient);
+  color: white;
+}
+
+/* 按钮激活效果 */
+.modern-more-button:active {
+  transform: translateY(0);
+}
+
+/* 按钮内的箭头图标动画 */
+.modern-more-button svg {
+  transition: transform var(--transition-normal);
+}
+
+.modern-more-button:hover svg {
+  transform: translateX(4px);
+}
+
+/* 按钮发光效果 */
+.modern-more-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left var(--transition-slow);
+}
+
+.modern-more-button:hover::before {
+  left: 100%;
+}
+
+/* ========================================
+   响应式设计
+======================================== */
+
+@media (max-width: 768px) {
+  .modern-games-section {
+    padding: var(--space-12) 0;
+  }
+  
+  .games-container {
+    padding: 0 var(--space-4);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-8);
+  }
+  
+  .more-games-container {
+    margin-top: var(--space-8);
+  }
+  
+  .modern-more-button {
+    font-size: var(--font-size-base);
+    padding: var(--space-3) var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* ========================================
+   深色模式适配
+======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .modern-games-section::before {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 245, 255, 0.05) 0%,
+      rgba(139, 92, 246, 0.05) 50%,
+      rgba(236, 72, 153, 0.05) 100%
+    );
+  }
+}
+
+/* ========================================
+   无障碍访问优化
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .section-title,
+  .section-title::after,
+  .modern-more-button::before {
+    animation: none;
+  }
+  
+  .modern-more-button:hover {
+    transform: none;
+  }
+  
+  .modern-more-button:hover svg {
+    transform: none;
+  }
+}
+
+/* 焦点样式 */
+.modern-more-button:focus-visible {
+  outline: 2px solid var(--primary-neon);
+  outline-offset: 2px;
+}
+</style>

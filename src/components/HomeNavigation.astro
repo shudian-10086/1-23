@@ -1,0 +1,72 @@
+---
+// 首页专用的简洁导航组件
+import { getTranslation } from '../data/i18n.ts';
+
+interface Props {
+  lang?: string;
+  currentPath?: string;
+}
+
+const { lang = 'en', currentPath = '/' } = Astro.props;
+const t = (key: string) => getTranslation(lang, key);
+---
+
+<nav class="nav-menu">
+  <ul>
+    <li><a href={lang === 'en' ? '/' : `/${lang}/`} class={currentPath === '/' ? 'active' : ''}>{t('nav.home')}</a></li>
+    <li><a href="/games/" class={currentPath.includes('/games/') ? 'active' : ''}>{t('nav.allGames')}</a></li>
+    <li><a href="/sprunki-retake/">Sprunki Retake</a></li>
+    <li><a href="/sprunki-phase-5/">Sprunki Phase 5</a></li>
+    <li><a href="/sprunki-craft/">Sprunki Craft</a></li>
+  </ul>
+</nav>
+
+<style>
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu li {
+  margin: 0;
+}
+
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background-color: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .nav-menu.active {
+    display: block;
+  }
+  
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .nav-menu a {
+    display: block;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+}
+</style>

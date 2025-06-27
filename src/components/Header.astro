@@ -1,0 +1,424 @@
+---
+// 现代化Header组件，使用组件化架构
+import LanguageSelector from './LanguageSelector.astro';
+import { getTranslation } from '../data/i18n.ts';
+
+interface Props {
+  lang?: string;
+  currentPath?: string;
+}
+
+const { lang = 'en', currentPath = '/' } = Astro.props;
+const t = (key: string) => getTranslation(lang, key);
+---
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <h1><a href={lang === 'en' ? '/' : `/${lang}/`}>Fiddle<span class="light">Bops</span></a></h1>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle Navigation">☰</button>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href={lang === 'en' ? '/' : `/${lang}/`}>{t('nav.home')}</a></li>
+                <li><a href="/games/">{t('nav.allGames')}</a></li>
+                <li><a href="/sprunki-retake/">Sprunki Retake</a></li>
+                <li><a href="/sprunki-phase-5/">Sprunki Phase 5</a></li>
+                <li><a href="/sprunki-craft/">Sprunki Craft</a></li>
+            </ul>
+        </nav>
+        <LanguageSelector currentLang={lang} currentPath={currentPath} />
+    </div>
+</header>
+
+<style>
+/* 2024现代化Header - 玻璃拟态 + 霓虹效果 */
+header {
+    /* 玻璃拟态背景效果 */
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-border);
+    
+    /* 固定定位和层级 */
+    position: sticky;
+    top: 0;
+    z-index: var(--z-index-sticky);
+    
+    /* 现代化内边距和阴影 */
+    padding: var(--space-4) 0;
+    box-shadow: var(--shadow-elevation-2);
+    
+    /* GPU加速优化 */
+    transform: translateZ(0);
+    will-change: backdrop-filter;
+    
+    /* 渐进增强 - 降级支持 */
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* 为不支持backdrop-filter的浏览器提供降级 */
+@supports not (backdrop-filter: blur(20px)) {
+    header {
+        background: var(--primary-gradient);
+        box-shadow: var(--shadow-elevation-3);
+    }
+}
+
+.container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+}
+
+/* 现代化Logo设计 - 霓虹渐变效果 */
+.logo h1 {
+    margin: 0;
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-extrabold);
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
+    line-height: var(--line-height-tight);
+}
+
+.logo a {
+    /* 霓虹渐变文字效果 */
+    background: var(--primary-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    
+    /* 动画和过渡 */
+    animation: gradient-shift var(--animation-wave) ease-in-out infinite;
+    transition: all var(--transition-normal);
+    
+    /* 移除默认样式 */
+    text-decoration: none;
+    display: inline-block;
+    
+    /* 微妙的发光效果 */
+    filter: drop-shadow(0 0 8px var(--primary-neon-20));
+}
+
+.logo a:hover {
+    transform: scale(1.02) translateY(-1px);
+    filter: drop-shadow(0 0 16px var(--primary-neon-30));
+}
+
+.logo .light {
+    font-weight: var(--font-weight-light);
+    opacity: 0.9;
+}
+
+/* 现代化移动端菜单按钮 */
+.nav-toggle {
+    display: none;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: var(--font-size-xl);
+    cursor: pointer;
+    padding: var(--space-3);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-toggle:hover {
+    background: var(--primary-gradient);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow-neon);
+}
+
+.nav-toggle:active {
+    transform: translateY(0);
+}
+
+/* 现代化导航菜单 */
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+}
+
+.nav-menu a {
+    /* 基础样式 */
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-sm);
+    
+    /* 现代化按钮设计 */
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-full);
+    background: transparent;
+    border: 1px solid transparent;
+    
+    /* 过渡动画 */
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    
+    /* 微妙的初始状态 */
+    backdrop-filter: blur(0px);
+}
+
+/* 导航项悬浮效果 */
+.nav-menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-gradient);
+    transition: left var(--transition-normal);
+    z-index: -1;
+    opacity: 0.9;
+}
+
+.nav-menu a:hover::before {
+    left: 0;
+}
+
+.nav-menu a:hover {
+    color: white;
+    transform: translateY(-2px);
+    border-color: var(--glass-border);
+    backdrop-filter: var(--glass-blur);
+    box-shadow: var(--shadow-glow-purple);
+}
+
+.nav-menu a:active {
+    transform: translateY(-1px);
+}
+
+/* 活动状态指示器 */
+.nav-menu a.active {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: var(--shadow-glow-neon);
+}
+
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    animation: pulse-dot var(--animation-pulse) ease-in-out infinite;
+}
+
+/* 语言选择器位置调整 */
+.container > :last-child {
+    margin-left: auto;
+}
+
+/* 响应式设计 - 移动优先 */
+@media (max-width: 768px) {
+    header {
+        padding: var(--space-3) 0;
+    }
+    
+    .container {
+        padding: 0 var(--space-4);
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-3);
+    }
+    
+    .logo h1 {
+        font-size: var(--font-size-3xl);
+        text-align: center;
+    }
+    
+    .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-end;
+        margin-top: calc(-1 * var(--space-12));
+        position: relative;
+        z-index: var(--z-index-dropdown);
+    }
+    
+    .nav-menu {
+        display: none;
+        width: 100%;
+        margin-top: var(--space-4);
+        
+        /* 移动端菜单背景 */
+        background: var(--glass-bg-strong);
+        backdrop-filter: var(--glass-blur);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-lg);
+        padding: var(--space-4);
+        
+        /* 动画效果 */
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: all var(--transition-normal);
+    }
+    
+    .nav-menu.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+        animation: slideDown var(--transition-normal) ease-out;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+        gap: var(--space-2);
+        width: 100%;
+    }
+    
+    .nav-menu a {
+        display: block;
+        text-align: center;
+        padding: var(--space-4);
+        border-radius: var(--radius-md);
+        border-bottom: 1px solid var(--glass-border);
+        width: 100%;
+    }
+    
+    .nav-menu a:last-child {
+        border-bottom: none;
+    }
+    
+    /* 移动端特殊悬浮效果 */
+    .nav-menu a:hover {
+        background: var(--primary-gradient);
+        color: white;
+        transform: scale(1.02);
+        border-color: transparent;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .nav-toggle {
+        padding: var(--space-2);
+        font-size: var(--font-size-lg);
+    }
+    
+    .container {
+        padding: 0 var(--space-3);
+    }
+}
+
+/* 大屏幕优化 */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 var(--space-8);
+    }
+    
+    .nav-menu ul {
+        gap: var(--space-3);
+    }
+    
+    .nav-menu a {
+        padding: var(--space-3) var(--space-6);
+        font-size: var(--font-size-base);
+    }
+}
+
+/* 关键帧动画 */
+@keyframes gradient-shift {
+    0%, 100% { 
+        background-position: 0% 50%; 
+    }
+    50% { 
+        background-position: 100% 50%; 
+    }
+}
+
+@keyframes pulse-dot {
+    0%, 100% { 
+        opacity: 1; 
+        transform: translateX(-50%) scale(1); 
+    }
+    50% { 
+        opacity: 0.6; 
+        transform: translateX(-50%) scale(1.2); 
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 性能优化 */
+.logo a,
+.nav-menu a,
+.nav-toggle {
+    will-change: transform;
+}
+
+/* 辅助功能优化 */
+@media (prefers-reduced-motion: reduce) {
+    .logo a,
+    .nav-menu a,
+    .nav-toggle {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: high) {
+    header {
+        background: var(--neutral-0);
+        border-bottom: 2px solid var(--neutral-900);
+    }
+    
+    .logo a {
+        -webkit-text-fill-color: var(--neutral-900);
+        background: none;
+    }
+    
+    .nav-menu a {
+        color: var(--neutral-900);
+        border: 1px solid var(--neutral-300);
+    }
+}
+</style>
+
+<script>
+// 移动端导航切换
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    }
+});
+</script>

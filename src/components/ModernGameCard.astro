@@ -1,0 +1,119 @@
+---
+// 现代化游戏卡片组件
+import type { GameItem } from '../data/games.ts';
+
+interface Props {
+  game: GameItem;
+  variant?: 'default' | 'compact' | 'list';
+  showBadge?: boolean;
+  badgeType?: 'new' | 'popular' | 'trending';
+  className?: string;
+}
+
+const { 
+  game, 
+  variant = 'default',
+  showBadge = false,
+  badgeType = 'new',
+  className = ''
+} = Astro.props;
+
+const cardClasses = [
+  'modern-game-card',
+  variant === 'compact' && 'compact',
+  className
+].filter(Boolean).join(' ');
+
+const badgeText = {
+  new: 'NEW',
+  popular: 'HOT',
+  trending: 'TRENDING'
+};
+---
+
+<div class={cardClasses}>
+  <a href={game.url} title={game.title} class="card-link">
+    <div class="game-image-container">
+      <img 
+        src={game.image} 
+        alt={game.title} 
+        class="game-image"
+        loading="lazy"
+        decoding="async"
+      />
+      {showBadge && (
+        <div class={`game-badge ${badgeType}`}>
+          {badgeText[badgeType]}
+        </div>
+      )}
+    </div>
+    <div class="game-info">
+      <h3 class="game-title">{game.title}</h3>
+    </div>
+  </a>
+</div>
+
+<style>
+/* 组件特定样式已在 modern-game-cards.css 中定义 */
+/* 这里只添加组件级别的微调 */
+
+.modern-game-card {
+  /* 确保卡片具有固定的宽高比 */
+  aspect-ratio: 4/5;
+  min-height: 280px;
+}
+
+.modern-game-card.compact {
+  aspect-ratio: 3/4;
+  min-height: 200px;
+}
+
+/* 确保链接覆盖整个卡片区域 */
+.card-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-image-container {
+  flex: 1;
+}
+
+.game-info {
+  flex-shrink: 0;
+}
+
+/* 图片加载优化 */
+.game-image {
+  /* 图片加载前的占位符背景 */
+  background: var(--neutral-200);
+}
+
+.game-image[loading="lazy"] {
+  /* 懒加载图片的渐显效果 */
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+.game-image[loading="lazy"].loaded {
+  opacity: 1;
+}
+</style>
+
+<script>
+// 图片懒加载完成后的处理
+document.addEventListener('DOMContentLoaded', function() {
+  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+  
+  lazyImages.forEach(img => {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', function() {
+        this.classList.add('loaded');
+      });
+    }
+  });
+});
+</script>

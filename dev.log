@@ -1,0 +1,47 @@
+
+> 1-23@0.0.1 dev
+> astro dev --port 4321
+
+23:59:20 [types] Generated 1ms
+23:59:20 [content] Syncing content
+23:59:20 [content] Synced content
+23:59:20 [vite] Re-optimizing dependencies because vite config has changed
+
+ astro  v5.10.1 ready in 657 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+23:59:20 watching for file changes...
+23:59:23 [200] /sprunki-craft/ 162ms
+23:59:26 [200] HEAD / 43ms
+23:59:26 [200] / 44ms
+23:59:35 [200] /sprunki-craft/ 20ms
+23:59:52 [200] / 15ms
+00:03:29 [200] /sprunki-craft/ 60ms
+00:03:33 [200] / 23ms
+00:04:50 [404] /.well-known/appspecific/com.chrome.devtools.json 8ms
+00:05:18 [200] / 13ms
+00:08:33 [200] / 13ms
+00:09:03 [200] / 9ms
+00:10:19 [200] / 14ms
+00:11:35 [200] / 8ms
+00:14:45 [200] / 15ms
+00:14:47 [watch] src/layouts/BaseLayout.astro
+00:14:48 [200] / 28ms
+00:14:53 [404] /.well-known/appspecific/com.chrome.devtools.json 6ms
+00:14:56 [watch] src/layouts/GameLayout.astro
+00:14:59 [200] / 47ms
+00:14:59 [404] /.well-known/appspecific/com.chrome.devtools.json 5ms
+00:15:13 [watch] /src/components/TrendingGames.astro?astro&type=style&index=0&lang.css
+00:15:13 [200] / 33ms
+00:15:13 [404] /.well-known/appspecific/com.chrome.devtools.json 28ms
+00:15:30 [watch] /src/components/TrendingGames.astro?astro&type=style&index=0&lang.css
+00:15:30 [200] / 17ms
+00:15:30 [404] /.well-known/appspecific/com.chrome.devtools.json 10ms
+00:15:51 [watch] /src/components/GameList.astro?astro&type=style&index=0&lang.css
+00:15:52 [200] / 24ms
+00:17:09 [watch] /src/components/GameList.astro?astro&type=style&index=0&lang.css, /src/components/GameList.astro?astro&type=style&index=1&lang.css
+00:17:11 [200] / 68ms
+00:17:43 [200] / 67ms
+00:18:01 [200] /sprunki-retake/ 21ms

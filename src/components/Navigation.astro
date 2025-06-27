@@ -1,0 +1,105 @@
+---
+// 统一导航组件
+import { getTranslation } from '../data/i18n.ts';
+
+interface Props {
+  lang?: string;
+  currentPath?: string;
+}
+
+const { lang = 'en', currentPath = '/' } = Astro.props;
+const t = (key: string) => getTranslation(lang, key);
+---
+
+<nav class="main-nav">
+  <ul>
+    <li><a href={lang === 'en' ? '/' : `/${lang}/`} class={currentPath === '/' ? 'active' : ''}>{t('nav.home')}</a></li>
+    <li><a href="/games/" class={currentPath.includes('/games/') ? 'active' : ''}>{t('nav.allGames')}</a></li>
+    <li><a href="/sprunki-retake/">Sprunki Retake</a></li>
+    <li><a href="/sprunki-phase-5/">Sprunki Phase 5</a></li>
+    <li><a href="/sprunki-but-with-memes/">Sprunki But With Memes</a></li>
+    <li><a href="/sprunki-abgerny/">Sprunki Abgerny</a></li>
+    <li><a href="/sprunki-babies/">Sprunki Babies</a></li>
+    <li><a href="/sprunki-night-time/">Sprunki Night Time</a></li>
+    <li><a href="/sprunki-phase-1/">Sprunki Phase 1</a></li>
+    <li><a href="/sprunki-phase-2-5/">Sprunki Phase 2.5</a></li>
+    <li><a href="/sprunki-minecraft/">Sprunki Minecraft</a></li>
+    <li><a href="/sprunki-craft/">Sprunki Craft</a></li>
+    <li><a href="/sprunki-like-minecraft/">Sprunki Like Minecraft</a></li>
+    <li><a href="/sprunki-interactive-beta/">Sprunki Interactive Beta</a></li>
+    <li><a href="/sprunki-maker/">Sprunki Maker</a></li>
+    <li><a href="/sprunki-meets-the-cat-spell/">Sprunki Meets The Cat Spell</a></li>
+    <li><a href="/sprunki-sepbox-steel-factory/">Sprunki Sepbox Steel Factory</a></li>
+    <li><a href="/sprunki-squid-remix/">Sprunki Squid Remix</a></li>
+    <li><a href="/sprunki-virus-new-update/">Sprunki Virus New Update</a></li>
+    <li><a href="/sprunki-christmas/">Sprunki Christmas</a></li>
+    <li><a href="/sprunki-red-sun/">Sprunki Red Sun</a></li>
+    <li><a href="/sprunki-retake-bonus-characters/">Sprunki Retake Bonus Characters</a></li>
+    <li><a href="/sprunki-pyramixed/">Sprunki Pyramixed</a></li>
+    <li><a href="/sprunki-pyramixed-version/">Sprunki Pyramixed Version</a></li>
+    <li><a href="/sprunki-basical/">Sprunki Basical</a></li>
+    <li><a href="/sprunki-1996/">Sprunki 1996</a></li>
+    <li><a href="/sprunkgerny/">Sprunkgerny</a></li>
+    <li><a href="/sprunkle-bops/">Sprunkle Bops</a></li>
+    <li><a href="/pikmin-no-sprunki/">Pikmin No Sprunki</a></li>
+    <li><a href="/mundo-torajo-sprunki/">Mundo Torajo Sprunki</a></li>
+    <li><a href="/super-sprunki-brasil/">Super Sprunki Brasil</a></li>
+    <li><a href="/fiddlebops-but-sprunki/">Fiddlebops But Sprunki</a></li>
+    <li><a href="/fiddlebops-but-dandys-world/">Fiddlebops But Dandy's World</a></li>
+    <li><a href="/fiddlebops-fix/">Fiddlebops Fix</a></li>
+    <li><a href="/fiddlebops-polos/">Fiddlebops Polos</a></li>
+    <li><a href="/fiddlebops-sprunkbop/">Fiddlebops Sprunkbop</a></li>
+    <li><a href="/fiddlebops-sprunki/">Fiddlebops Sprunki</a></li>
+    <li><a href="/fiddlebops-sprunksters-remix/">Fiddlebops Sprunksters Remix</a></li>
+    <li><a href="/ayocs-sprunkr/">Ayocs Sprunkr</a></li>
+    <li><a href="/dandyrunki-retake/">Dandyrunki Retake</a></li>
+    <li><a href="/mountayonnaise/">Mountayonnaise</a></li>
+    <li><a href="/incredibox/">Incredibox</a></li>
+    <li><a href="/incredibox-cool-as-ice/">Incredibox Cool As Ice</a></li>
+    <li><a href="/incredibox-donki-abgerny/">Incredibox Donki Abgerny</a></li>
+    <li><a href="/incredibox-shatter-sprunk/">Incredibox Shatter Sprunk</a></li>
+    <li><a href="/incredibox-sprinkle/">Incredibox Sprinkle</a></li>
+    <li><a href="/incredibox-sprunksters/">Incredibox Sprunksters</a></li>
+    <li><a href="/incredibox-yellow-colorbox/">Incredibox Yellow Colorbox</a></li>
+  </ul>
+</nav>
+
+<style>
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.main-nav li {
+  margin: 0;
+}
+
+.main-nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  background-color: #007bff;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+  }
+  
+  .main-nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+  }
+}
+</style>

@@ -1,0 +1,26 @@
+---
+// 现代化趋势游戏组件
+import ModernGameGrid from './ModernGameGrid.astro';
+import { trendingGames } from '../data/games.ts';
+import { getTranslation } from '../data/i18n.ts';
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = (key: string) => getTranslation(lang, key);
+---
+
+<ModernGameGrid 
+  games={trendingGames}
+  title={t('common.trendingGames')}
+  variant="grid"
+  showBadges={true}
+  badgeType="trending"
+  lang={lang}
+  maxItems={10}
+  showMoreLink={true}
+  moreLink="/games/"
+/>
+

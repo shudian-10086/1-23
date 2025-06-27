@@ -1,0 +1,308 @@
+/* 组件样式 - 提取自多个文件的重复组件样式 */
+
+/* 视频容器样式 - 重复于所有语言首页 */
+.video-container {
+  margin: 30px auto 0;
+  border: 3px solid var(--tertiary-dark);
+  border-radius: 4px;
+  height: 400px;
+}
+
+.video-container iframe {
+  width: 45%;
+  height: 100%;
+  float: left;
+  margin: 0 30px;
+}
+
+/* 音频控件样式 */
+audio {
+  width: 210px;
+}
+
+/* 游戏iframe样式 - 重复于多个页面 */
+.game-card .game-iframe-sprunki {
+  float: left;
+  width: 69%;
+  margin: 0;
+  padding: 0;
+  height: 600px;
+  background-color: #fff;
+  position: relative;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(/tw.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* 游戏网格布局 */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.game {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.game:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.game a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.game-logo {
+  padding: 1.5rem 1.5rem 1rem;
+  text-align: center;
+}
+
+.game-logo img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.game h3 {
+  padding: 0 1.5rem 1.5rem;
+  margin: 0;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 游戏列表组件样式 */
+.game-iframe,
+.game-iframe-pop,
+.game-iframe-new,
+.game-iframe-trending {
+  margin: 2rem 0;
+}
+
+.game-iframe h3,
+.game-iframe-pop h3,
+.game-iframe-new h3,
+.game-iframe-trending h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.game-iframe ul,
+.game-iframe-pop ul,
+.game-iframe-new ul,
+.game-iframe-trending ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.game-iframe li,
+.game-iframe-pop li,
+.game-iframe-new li,
+.game-iframe-trending li {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+
+.game-iframe li:hover,
+.game-iframe-pop li:hover,
+.game-iframe-new li:hover,
+.game-iframe-trending li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.game-iframe a,
+.game-iframe-pop a,
+.game-iframe-new a,
+.game-iframe-trending a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.game-iframe img,
+.game-iframe-pop img,
+.game-iframe-new img,
+.game-iframe-trending img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.game-iframe .title,
+.game-iframe-pop .title,
+.game-iframe-new .title,
+.game-iframe-trending .title {
+  padding: 1rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 语言选择器样式 */
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.language-selector select {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.language-selector select:hover,
+.language-selector select:focus {
+  border-color: #ff7043;
+}
+
+/* AddToAny 社交分享按钮样式 */
+.a2a_floating_style.a2a_vertical_style { 
+  display: none; 
+}
+
+.a2a_floating_style.a2a_default_style { 
+  display: block; 
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 980px) {
+  .game-card .game-iframe-sprunki {
+    width: 100%;
+  }
+  
+  .game-card .game-iframe-pop {
+    display: none;
+  }
+  
+  .game-card .game-iframe-new {
+    width: 100%;
+  }
+  
+  .game-card .game-iframe-new ul {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    display: grid;
+    text-align: center;
+  }
+  
+  .game-card .game-iframe-new li {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .game-card .game-iframe-new h3 {
+    font-size: 20px;
+  }
+  
+  .a2a_floating_style.a2a_vertical_style { 
+    display: none; 
+  }
+  
+  .a2a_floating_style.a2a_default_style { 
+    display: block; 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  audio {
+    width: 120px;
+  }
+  
+  .game-card .game-iframe-sprunki {
+    height: 330px !important;
+  }
+  
+  .video-container {
+    height: 300px;
+  }
+  
+  .video-container iframe {
+    width: 94%;
+    height: 100%;
+    padding: 0px;
+    margin: 20px;
+  }
+  
+  .game-info {
+    display: none;
+  }
+  
+  .game-iframe ul,
+  .game-iframe-pop ul,
+  .game-iframe-new ul,
+  .game-iframe-trending ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .game-iframe .title,
+  .game-iframe-pop .title,
+  .game-iframe-new .title,
+  .game-iframe-trending .title {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    min-height: 2.5rem;
+  }
+  
+  .game-iframe img,
+  .game-iframe-pop img,
+  .game-iframe-new img,
+  .game-iframe-trending img {
+    height: 120px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .game-iframe ul,
+  .game-iframe-pop ul,
+  .game-iframe-new ul,
+  .game-iframe-trending ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .a2a_floating_style.a2a_default_style { 
+    display: none; 
+  }
+  
+  .a2a_floating_style.a2a_vertical_style { 
+    display: block; 
+  }
+}

@@ -1,0 +1,69 @@
+---
+// 语言选择器组件
+import { supportedLanguages } from '../data/i18n.ts';
+
+interface Props {
+  currentLang?: string;
+  currentPath?: string;
+}
+
+const { currentLang = 'en', currentPath = '/' } = Astro.props;
+---
+
+<div class="language-selector">
+  <select id="languageSelect" style="float:right;">
+    {supportedLanguages.map(lang => (
+      <option 
+        value={lang.code}
+        data-lang={lang.code} 
+        data-url={lang.url}
+        selected={currentLang === lang.code}
+      >
+        {lang.name}
+      </option>
+    ))}
+  </select>
+</div>
+
+<script>
+// 语言切换逻辑
+document.addEventListener('DOMContentLoaded', function() {
+  const languageSelect = document.getElementById('languageSelect') as HTMLSelectElement;
+  
+  if (languageSelect) {
+    languageSelect.addEventListener('change', function() {
+      const selectedOption = this.options[this.selectedIndex];
+      const targetUrl = selectedOption.getAttribute('data-url');
+      
+      if (targetUrl) {
+        window.location.href = targetUrl;
+      }
+    });
+  }
+});
+</script>
+
+<style>
+.language-selector select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.language-selector select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+@media (max-width: 768px) {
+  .language-selector select {
+    float: none !important;
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+</style>

@@ -1,0 +1,80 @@
+---
+// 现代化游戏列表组件（首页侧边栏使用）
+import ModernGameCard from './ModernGameCard.astro';
+import type { GameItem } from '../data/games.ts';
+import { getTranslation } from '../data/i18n.ts';
+
+interface Props {
+  games: GameItem[];
+  title: string;
+  className?: string;
+  lang?: string;
+  showTitle?: boolean;
+  variant?: 'list' | 'compact';
+}
+
+const { 
+  games, 
+  title, 
+  className = 'modern-game-sidebar', 
+  lang = 'en',
+  showTitle = true,
+  variant = 'list'
+} = Astro.props;
+
+const t = (key: string) => getTranslation(lang, key);
+---
+
+<div class={className}>
+  {showTitle && (
+    <h3 class="sidebar-title">
+      <span class="title-icon">&#9658;</span>
+      <span class="title-text">{title}</span>
+    </h3>
+  )}
+  <div class="modern-game-list">
+    {games.map((game, index) => (
+      <ModernGameCard 
+        game={game}
+        variant="compact"
+        showBadge={index < 2}
+        badgeType="new"
+      />
+    ))}
+  </div>
+</div>
+
+<style>
+.modern-game-sidebar {
+  margin: var(--space-8) 0;
+}
+
+.sidebar-title {
+  color: var(--text-primary);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.title-icon {
+  color: var(--primary-neon);
+  font-size: var(--font-size-lg);
+}
+
+.title-text {
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .sidebar-title {
+    font-size: var(--font-size-lg);
+  }
+}
+</style>
+

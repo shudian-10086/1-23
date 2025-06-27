@@ -1,0 +1,371 @@
+/**
+ * 现代化游戏卡片样式系统
+ * 与Header的玻璃拟态设计保持一致
+ */
+
+/* ========================================
+   现代化游戏卡片基础样式
+======================================== */
+
+.modern-game-card {
+  /* 玻璃拟态背景 */
+  background: var(--glass-bg-strong);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-game-card);
+  
+  /* 现代化阴影系统 */
+  box-shadow: var(--shadow-elevation-2);
+  
+  /* 过渡动画 */
+  transition: all var(--transition-normal);
+  overflow: hidden;
+  position: relative;
+  
+  /* GPU加速 */
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+}
+
+/* 悬浮状态 */
+.modern-game-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--glass-border-strong);
+  background: var(--glass-bg);
+}
+
+/* 激活状态 */
+.modern-game-card:active {
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* ========================================
+   游戏卡片内容区域
+======================================== */
+
+.modern-game-card .card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+/* 游戏图片容器 */
+.modern-game-card .game-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--primary-gradient);
+  
+  /* 创建蒙版效果 */
+  background-size: 400% 400%;
+  animation: gradient-shift var(--animation-wave) ease-in-out infinite;
+}
+
+.modern-game-card .game-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all var(--transition-slow);
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* 悬浮时的图片效果 */
+.modern-game-card:hover .game-image {
+  transform: scale(1.1);
+  filter: brightness(1) contrast(1.2);
+}
+
+/* 图片上的渐变蒙版 */
+.modern-game-card .game-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 245, 255, 0.1) 0%,
+    rgba(139, 92, 246, 0.1) 50%,
+    rgba(236, 72, 153, 0.1) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.modern-game-card:hover .game-image-container::after {
+  opacity: 1;
+}
+
+/* ========================================
+   游戏信息区域
+======================================== */
+
+.modern-game-card .game-info {
+  padding: var(--space-6);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-top: 1px solid var(--glass-border);
+  position: relative;
+}
+
+.modern-game-card .game-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0;
+  text-align: center;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* 霓虹文字效果（可选） */
+  background: var(--primary-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift var(--animation-pulse) ease-in-out infinite;
+}
+
+/* ========================================
+   网格布局现代化
+======================================== */
+
+.modern-game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+  margin: var(--space-12) 0;
+  padding: 0 var(--space-4);
+}
+
+/* ========================================
+   小型游戏卡片（侧边栏使用）
+======================================== */
+
+.modern-game-card.compact {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-elevation-1);
+}
+
+.modern-game-card.compact .game-image-container {
+  height: 120px;
+}
+
+.modern-game-card.compact .game-info {
+  padding: var(--space-4);
+}
+
+.modern-game-card.compact .game-title {
+  font-size: var(--font-size-base);
+  min-height: 2.5rem;
+}
+
+.modern-game-card.compact:hover {
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* ========================================
+   特殊效果：音乐波形装饰
+======================================== */
+
+.modern-game-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-gradient);
+  background-size: 200% 200%;
+  animation: gradient-shift var(--animation-beat) ease-in-out infinite;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.modern-game-card:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   标签和徽章系统
+======================================== */
+
+.modern-game-card .game-badge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  background: var(--glass-bg-strong);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  z-index: 2;
+}
+
+.modern-game-card .game-badge.new {
+  background: var(--success-bg);
+  color: var(--success-modern);
+  border-color: var(--success-modern);
+}
+
+.modern-game-card .game-badge.popular {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+}
+
+/* ========================================
+   加载和交互状态
+======================================== */
+
+.modern-game-card .loading-placeholder {
+  background: linear-gradient(
+    90deg,
+    var(--neutral-200) 25%,
+    var(--neutral-100) 50%,
+    var(--neutral-200) 75%
+  );
+  background-size: 200% 100%;
+  animation: loading-shimmer 2s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* 点击反馈 */
+.modern-game-card:active .game-image-container {
+  transform: scale(0.98);
+}
+
+/* ========================================
+   响应式设计
+======================================== */
+
+@media (max-width: 768px) {
+  .modern-game-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    margin: var(--space-8) 0;
+  }
+  
+  .modern-game-card .game-image-container {
+    height: 150px;
+  }
+  
+  .modern-game-card .game-info {
+    padding: var(--space-4);
+  }
+  
+  .modern-game-card .game-title {
+    font-size: var(--font-size-base);
+    min-height: 2.5rem;
+  }
+  
+  .modern-game-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-game-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  .modern-game-card .game-image-container {
+    height: 180px;
+  }
+}
+
+/* ========================================
+   深色模式适配
+======================================== */
+
+@media (prefers-color-scheme: dark) {
+  .modern-game-card .game-title {
+    color: var(--text-primary);
+  }
+  
+  .modern-game-card .game-image {
+    filter: brightness(0.8) contrast(1.1);
+  }
+  
+  .modern-game-card:hover .game-image {
+    filter: brightness(0.9) contrast(1.2);
+  }
+}
+
+/* ========================================
+   无障碍访问优化
+======================================== */
+
+.modern-game-card:focus-within {
+  outline: 2px solid var(--primary-neon);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modern-game-card,
+  .modern-game-card .game-image,
+  .modern-game-card .game-image-container::after {
+    animation: none;
+    transition: none;
+  }
+  
+  .modern-game-card:hover {
+    transform: none;
+  }
+}
+
+/* ========================================
+   游戏卡片列表特殊样式（首页侧边栏）
+======================================== */
+
+.modern-game-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.modern-game-list .modern-game-card {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-elevation-1);
+}
+
+.modern-game-list .game-image-container {
+  height: 120px;
+}
+
+.modern-game-list .game-info {
+  padding: var(--space-3);
+}
+
+.modern-game-list .game-title {
+  font-size: var(--font-size-sm);
+  min-height: 2rem;
+  font-weight: var(--font-weight-medium);
+}
+
+@media (max-width: 768px) {
+  .modern-game-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
+}
+
+@media (max-width: 480px) {
+  .modern-game-list {
+    grid-template-columns: 1fr;
+  }
+}

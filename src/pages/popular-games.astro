@@ -1,9 +1,20 @@
-<div class="game-iframe-pop">
-  <h3>&#9658; Popular Games</h3>
-  <ul>
-   <li><a href="https://www.playfiddlebops.com/sprunki-red-sun/" title="Sprunki Red Sun"><img src="/sprunki-red-sun.png"><div class="title">Sprunki Red Sun</div></a></li>
-    <li><a href="https://www.playfiddlebops.com/sprunki-abgerny/" title="Sprunki Abgerny"><img src="/sprunki-abgerny.png"><div class="title">Sprunki Abgerny</div></a></li>
-   <li><a href="https://www.playfiddlebops.com/sprunki-sonic/" title="Sprunki Sonic"><img src="/Sprunki Sonic.png"><div class="title">Sprunki Sonic</div></a></li>
-    <li><a href="https://www.playfiddlebops.com/" title="Fiddlebops"><img src="/tw.jpg"><div class="title">fiddlebops</div></a></li>
-  </ul>
-</div>
+---
+// 重构的热门游戏组件
+import GameList from '../components/GameList.astro';
+import { popularGames } from '../data/games.ts';
+import { getTranslation } from '../data/i18n.ts';
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'en' } = Astro.props;
+const t = (key: string) => getTranslation(lang, key);
+---
+
+<GameList 
+  games={popularGames} 
+  title={t('common.popularGames')} 
+  className="game-iframe-pop"
+  lang={lang}
+/>
