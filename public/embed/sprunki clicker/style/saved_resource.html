@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="./game.css">
+	<meta name="robots" content="noindex, nofollow">
+	<link href="./css2" rel="stylesheet">
+	<title>Sprunki Clicker</title>
+	<meta name="description" content="">
+	<style type="text/css">
+		.jss1:before {
+			top: 0;
+			width: 100%;
+			filter: blur(16px);
+			height: 100%;
+			content: "";
+			display: block;
+			opacity: .5;
+			z-index: 0;
+			position: absolute;
+			background-size: cover;
+			background-image: url("25011401/loading.png")
+		}
+	</style> 
+	 
+	<script>
+		var buildUrl = "Build";
+		var versionFolder = "25011401/";
+		buildUrl = "https://games.azgame.io/game/sprunki-clicker/"+versionFolder + buildUrl;
+		var loaderUrl = buildUrl + "/sprunki-clicker-v25011401.loader.js";
+		var config = {
+			dataUrl: buildUrl + "/sprunki-clicker-v25011401.data.unityweb",
+			frameworkUrl: buildUrl + "/sprunki-clicker-v25011401.framework.js.unityweb",
+			codeUrl: buildUrl + "/sprunki-clicker-v25011401.wasm.unityweb",
+			streamingAssetsUrl: versionFolder+"StreamingAssets",
+			companyName: "playfiddlebops.com",
+			productName: "Sprunki Clicker",
+			productVersion: "25011401",
+			pubId: ""
+		};
+		config.gameId = "sprunki-clicker";
+		config.eventLog=true;
+		config.buildAPI = "https://event.azgame.io/apiaz/event";
+		let currentDate = new Date();
+		let endLogDate = new Date("2025-02-01T10:15:33.643Z");
+		if(currentDate>endLogDate){
+			config.eventLog=false;
+		}
+		config.enableMoreGame="no";
+		config.enablePromotion = true;
+		config.gdHost=isHostOnGD();
+		if(config.gdHost){
+			config.enableMoreGame="no";
+			config.enablePromotion = false;
+			config.eventLog = false;
+			let pathSegments = window.location.pathname.split('/');
+			config.gdGameId = pathSegments[1];
+		}
+		function isHostOnGD() {
+			let domainParts = window.location.hostname.split('.');
+			let mainDomain = domainParts.slice(-2).join('.');
+			return (mainDomain=="playfiddlebops.com");
+		}
+	</script>
+	<script id="gmsoft-jssdk" src="./gmsoftsdk_v5.js"></script>
+</head>
+
+<body>
+<div id="unity-container" style="display: block;">
+	<canvas id="unity-canvas" style="cursor: default;"></canvas> 
+</div>
+<div id="loadingBlock" style="display: none;">
+	<div class="jss31 jss34 jss1">
+	<div style="position: absolute; font-family: Arial, Helvetica, sans-serif;	bottom: 10px; right: 10px; font-size: 18px; color: #ffffff; opacity: 0.5;">25011401</div>
+		<div class="spinner"></div>
+		<div class="jss31 jss34 jss48" style="flex: 1 1 0%;">
+			<div class="jss32">
+				<div class="jss7 jss9 jss20 jss3">
+					<div class="jss125">
+						<div class="jss123">
+						 <img src="./logo.png">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--PRODUCT_VERSION:25011401END-->
+		<div class="jss31 jss34" style="flex: 3 1 0%;">
+			<div class="jss32">
+				<div class="jss31 jss34 jss39 jss50 gameloader">
+					<div class="jss32">
+						<div class="gameloader-game-name">Sprunki Clicker</div>
+					</div>
+					<div class="jss32">
+						<div class="jss32 gameloader-logo">
+							<img id="game-logo" src="./loading.png">
+						</div>
+					</div>
+					<div class="jss32">
+						<div>
+							<div class="gameloader-progressbar">
+								<div class="gameloader-progressbar-progress" id="progress_fill" style="width: 100%;"></div>
+							</div>
+							<div class="gameloader-progress-info">Downloading file: 100%</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<script> 
+		var progressElement = document.getElementById('progress_fill');
+		var container =	document.getElementById("unity-container");
+		var canvas =	document.getElementById("unity-canvas");
+		var loadingBar = document.querySelector("#loadingBlock");
+		var progressBarFull = document.querySelector("#progress_fill");
+		var progress_text = document.querySelector(".gameloader-progress-info");
+		let text_percent = "";
+		var script = document.createElement("script");
+		script.src = loaderUrl;
+		script.onload = () => {
+		createUnityInstance(canvas, config, (progress) => {
+			progressElement.style.width = 100 * progress + "%";
+			text_percent = "Downloading file: " + Math.round(progress*100) + "%";
+			progress_text.innerText = text_percent;
+			if (progress >= 99) {
+				progress_text.innerText = "Game Loading ...";
+			}
+		}).then((unityInstance) => {
+			window.unityInstance = unityInstance;
+			setTimeout(function() {
+				loadingBar.style.display = "none";
+				window.focus();
+			}, 2000);
+			container.style.display = "block";
+		}).catch((message) => {
+			alert(message);
+		});
+		};
+		document.body.appendChild(script);
+	</script><script src="./sprunki-clicker-v25011401.loader.js"></script>
+	<script src="./firebase-app-compat.js"></script>
+	<script src="./firebase-firestore-compat.js"></script>
+	<script src="./firebase-auth-compat.js"></script>
+	<script src="./firebase-analytics-compat.js"></script>
+	<script type="module">
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+ apiKey: "AIzaSyBKge8_aHg2NpIAVn1kYKqJLJaWSptk01k",
+ authDomain: "sprunki-clicker.firebaseapp.com",
+ projectId: "sprunki-clicker",
+ storageBucket: "sprunki-clicker.firebasestorage.app",
+ messagingSenderId: "394633665681",
+ appId: "1:394633665681:web:0ed2c97ffec678611e3330",
+ measurementId: "G-5GDWDKGRCZ"
+};
+		if(firebaseConfig ){
+			window.dataLayer = window.dataLayer || [];
+			window.gtag = function () { window.dataLayer.push(arguments); }
+
+			window.gtag("config", firebaseConfig.measurementId, {
+			  cookie_domain: window.location.hostname,
+			  cookie_flags: "SameSite=None;Secure",
+			});
+			// Initialize Firebase
+			const app = firebase.initializeApp(firebaseConfig);
+			//const auth = getAuth(app);
+		}
+	</script>
+	<script>
+		function firebaseSetUserProperties(props) {
+			firebase.analytics().setUserProperties(props);
+		}
+		function firebaseLogEvent(event_name) {
+			firebase.analytics().logEvent(event_name);
+		}
+		function firebaseLogEventParameter(event_name, event_param) {
+			firebase.analytics().logEvent(event_name, event_param);
+		}
+	</script>
+	
+<script defer="" src="./vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;7aa564ef6af14bc2822f8b6f902775d5&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+	
+
+
+<script src="blob:https://game.azgame.io/77a134e2-c216-41a5-a602-b578a34ef3d5"></script></body></html>
